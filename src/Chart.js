@@ -7,11 +7,69 @@ const Chart = (() => {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch('');
-      console.log(response)
+      try {
+        const response = await fetch('/tweets');
+        const json = await response.json();
+        console.log(json)
+        setTwitterData(json)
+      } catch (error) {
+        console.log(error)
+      }
     }
     fetchData();
   }, [])
+
+  const sort = (a, b) => {
+    if(a.count < b.count) return 1
+    else if(a.count > b.count) return -1
+    else return 0
+  }
+
+  const getTopTwentyWords = () => {
+    let topTwenty = [];
+    let allWords = []
+    let wordCounts = {}
+
+    // TODO: move this to its own file
+    const stopwords = ["with", "to", "of", "the", "there", "are", "more", "this", "on", "its", "in", "and", "for", "gt", "will", "or", "an", "be", "how", "is", "from", "https", "rt", "co", "by", "our", "via", "at", "can"]
+
+    twitterData.map(tweet => {
+      // remove urls and @'s
+      let words = tweet.text.replace(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/g, "")
+      words = words.replace(/(^|)@\w+/g, "")
+
+      // split tweet into words
+      words = tweet.text.split(/\b/);
+
+      // for each word, sanitize the word and then add it to wordCounts and allWords
+      words.map(word => {
+        word = word.trim()
+        word = word.toLowerCase()
+        if(word.length === 1) word = null
+        if(word && word.match(/[^a-zA-Z0-9\d\s:]/g)) word = null
+        
+        if(word && stopwords.indexOf(word.toLowerCase()) < 0) {
+          wordCounts["_" + word] = (wordCounts["_" + word] || 0) + 1
+          if(allWords.indexOf(word) < 0) allWords.push(word)
+        }
+        return;
+      })
+      return;
+    })
+    console.log(allWords)
+    console.log(wordCounts)
+    for (let word of allWords) {
+        topTwenty.push({ word: word, count: wordCounts["_" + word] })
+    }
+    topTwenty.sort(sort)
+    topTwenty = topTwenty.slice(0, 20)
+    return topTwenty;
+  }
+
+  useEffect(() => {
+    // getTopTwentyWords()
+    if(twitterData.length > 0) console.log(getTopTwentyWords())
+  })
 
 
   const frameProps = {
