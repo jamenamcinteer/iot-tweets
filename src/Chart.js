@@ -35,7 +35,7 @@ const Chart = (() => {
 
     twitterData.map(tweet => {
       // remove urls and @'s
-      let words = tweet.text.replace(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/g, "")
+      let words = tweet.text.replace(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)/g, "")
       words = words.replace(/(^|)@\w+/g, "")
 
       // split tweet into words
@@ -52,9 +52,9 @@ const Chart = (() => {
           wordCounts["_" + word] = (wordCounts["_" + word] || 0) + 1
           if(allWords.indexOf(word) < 0) allWords.push(word)
         }
-        return;
+        return false;
       })
-      return;
+      return false;
     })
     console.log(allWords)
     console.log(wordCounts)
