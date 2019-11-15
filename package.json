@@ -3,17 +3,34 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "concurrently": "^5.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "heroku-ssl-redirect": "^0.0.4",
+    "nodemon": "^1.19.4",
+    "path": "^0.12.7",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.2.0",
-    "semiotic": "^1.20.3"
+    "semiotic": "^1.20.3",
+    "twitter": "^1.7.1",
+    "universal-config": "^0.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "client-start": "react-scripts start",
+    "client-build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "coverage": "react-scripts test --watchAll=false --coverage",
+    "eject": "react-scripts eject",
+    "server-watch": "nodemon --watch server --exec yarn server-start",
+    "server-start": "yarn server",
+    "server": "node server/index.js",
+    "dev": "concurrently \"yarn server-watch\" \"yarn client-start\"",
+    "heroku-postbuild": "yarn server && yarn client-build"
   },
+  "proxy": "http://localhost:3001",
   "eslintConfig": {
     "extends": "react-app"
   },
