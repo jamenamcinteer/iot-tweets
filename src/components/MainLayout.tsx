@@ -1,9 +1,39 @@
 import React, { useEffect, useState } from "react"
+import styled from "styled-components";
 import Chart from "./Chart"
 import CurrentTweet from "./CurrentTweet"
 import TopWord from "./TopWord"
 import stopwords from "../stopwords"
 import { ITopTwentyWords, ITweets, ITopWord } from "../interfaces/interfaces"
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 150px;
+  width: 100%;
+`
+
+const GridChart = styled.div`
+  grid-column: 2;
+`
+
+const GridChartFrame = styled.div`
+  width: 400px;
+  margin: 0 auto;
+  position: relative;
+`
+
+const GridTweets = styled.div`
+  grid-column: 3;
+`
+
+const GridTweetsContainer = styled.div`
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  height: 100%;
+`
 
 const MainLayout = () => {
   const [twitterData, setTwitterData] = useState([])
@@ -104,19 +134,19 @@ const MainLayout = () => {
   }, [topWord, freezeCycle])
 
   return (
-    <div className="grid">
-      <div className="grid__chart">
-        <div className="grid__chartFrame">
+    <Grid>
+      <GridChart>
+        <GridChartFrame>
           <Chart twitterData={twitterData} topTwentyWords={topTwentyWords} handleHover={handleChartHover} handleCycleOn={handleCycleChange} />
           <TopWord topWord={topWord} />
-        </div>
-      </div>
-      <div className="grid__tweets">
-        <div className="grid__tweetsContainer">
+        </GridChartFrame>
+      </GridChart>
+      <GridTweets>
+        <GridTweetsContainer>
           <CurrentTweet twitterData={twitterData} />
-        </div>
-      </div>
-    </div>)
+        </GridTweetsContainer>
+      </GridTweets>
+    </Grid>)
 }
 
 export default MainLayout

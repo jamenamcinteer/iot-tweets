@@ -42,3 +42,15 @@ export interface ITopWord {
   count: number,
   index: number
 }
+
+export interface IPropsTheme {
+  theme: ITheme
+}
+
+export interface ITheme {
+  pageBackgroundColor: string,
+  baseFontColor: string,
+  baseChartColorR: number,
+  baseChartColorG: number,
+  baseChartColorB: number
+}

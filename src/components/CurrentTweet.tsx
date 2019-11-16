@@ -1,6 +1,25 @@
 import React, { useEffect, useState } from "react"
 import moment from "moment"
+import styled from "styled-components"
 import NextTweetButton from "./NextTweetButton"
+
+const TweetUserProfileImage = styled.img`
+  box-shadow: 0px 0px 4px rgba(255, 255, 255, 1);
+  /* -webkit-mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>'); */
+  mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');
+  mask-mode: alpha;
+  /* -webkit-mask-repeat: no-repeat; */
+  mask-repeat: no-repeat;
+  /* -webkit-mask-size: contain; */
+  mask-size: contain;
+  /* -webkit-mask-position: center; */
+  mask-position: center;
+  border-radius: 9999px;
+`
+
+const TweetDate = styled.span`
+  white-space: nowrap;
+`
 
 const CurrentTweet = ({ twitterData }) => {
   const [currentTweet, setCurrentTweet] = useState()
@@ -25,8 +44,8 @@ const CurrentTweet = ({ twitterData }) => {
     <>
     {currentTweet && (
       <div>
-        <img src={currentTweet.user_profile_image_url_https} alt="" />
-        <p>{currentTweet.user_screen_name} @{currentTweet.user_name} <span className="tweet__date">· {moment(currentTweet.created_at).fromNow()}</span></p>
+        <TweetUserProfileImage src={currentTweet.user_profile_image_url_https} alt="" />
+        <p>{currentTweet.user_screen_name} @{currentTweet.user_name} <TweetDate>· {moment(currentTweet.created_at).fromNow()}</TweetDate></p>
         <p dangerouslySetInnerHTML={currentTweet}></p>
         <NextTweetButton clickHandler={nextClickHandler} />
       </div>
