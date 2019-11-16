@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react"
 import Chart from "./Chart"
 import CurrentTweet from "./CurrentTweet"
+import TopWord from "./TopWord"
 import stopwords from "../stopwords"
 
 const MainLayout = () => {
   const [twitterData, setTwitterData] = useState([])
   const [topTwentyWords, setTopTwentyWords] = useState([])
+  const [topWord, setTopWord] = useState({})
+  const [freezeCycle, setFreezeCycle] = useState(false)
 
   useEffect(() => {
     async function fetchData() {
@@ -74,11 +77,35 @@ const MainLayout = () => {
     if(twitterData.length > 0 && topTwentyWords.length === 0) console.log(getTopTwentyWords())
   }, [twitterData, topTwentyWords])
 
+  const handleChartHover = (newTopWord) => {
+    if(!topWord) setTopWord(newTopWord)
+    if(topWord && newTopWord && topWord.word !== newTopWord.word) setTopWord(newTopWord)
+    if(newTopWord) setFreezeCycle(true)
+  }
+
+  const handleCycleChange = (newTopWord) => {
+    if(!freezeCycle) setTopWord(newTopWord)
+  }
+
+  useEffect(() => {
+    const selectAll = document.querySelectorAll(`.pieces > g > path`)
+    if(topWord && selectAll.length > 0) {
+      const selectThis = document.querySelector(`.pieces > g:nth-child(${topWord.index + 1}) > path`)
+      // if(freezeCycle) {
+        selectAll.forEach(el => {
+          el.style.fillOpacity = 0.4;
+        })
+      // }
+      selectThis.style.fillOpacity = 1;
+    }
+  }, [topWord, freezeCycle])
+
   return (
     <div className="grid">
       <div className="grid__chart">
         <div className="grid__chartFrame">
-          <Chart twitterData={twitterData} topTwentyWords={topTwentyWords} />
+          <Chart twitterData={twitterData} topTwentyWords={topTwentyWords} handleHover={handleChartHover} handleCycleOn={handleCycleChange} />
+          <TopWord topWord={topWord} />
         </div>
       </div>
       <div className="grid__tweets">

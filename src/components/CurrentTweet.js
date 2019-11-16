@@ -9,13 +9,13 @@ const CurrentTweet = ({ twitterData }) => {
     const newIndex = Math.floor(Math.random(0, 1) * twitterData.length)
     console.log(twitterData[newIndex])
     setCurrentTweet(twitterData[newIndex])
-    setInterval(() => {
-      const newIndex = Math.floor(Math.random(0, 1) * twitterData.length)
-      setCurrentTweet(twitterData[newIndex])
-    }, 15000)
+    // setInterval(() => {
+    //   const newIndex = Math.floor(Math.random(0, 1) * twitterData.length)
+    //   setCurrentTweet(twitterData[newIndex])
+    // }, 15000)
   }, [twitterData])
 
-  const nextClickHander = () => {
+  const nextClickHandler = () => {
     const newIndex = Math.floor(Math.random(0, 1) * twitterData.length)
     setCurrentTweet(twitterData[newIndex])
   }
@@ -28,7 +28,7 @@ const CurrentTweet = ({ twitterData }) => {
         <img src={currentTweet.user_profile_image_url_https} alt="" />
         <p>{currentTweet.user_screen_name} @{currentTweet.user_name} <span className="tweet__date">· {moment(currentTweet.created_at).fromNow()}</span></p>
         <p dangerouslySetInnerHTML={currentTweet}></p>
-        <NextTweetButton clickHandler={nextClickHander} />
+        <NextTweetButton clickHandler={nextClickHandler} />
       </div>
     )}
     </>

@@ -18,6 +18,7 @@ body {
 .grid__chartFrame {
   width: 400px;
   margin: 0 auto;
+  position: relative;
 }
 
 .grid__tweets {
