@@ -2,7 +2,9 @@ body, html {
   box-sizing: border-box;
 }
 body {
+  background: url(/images/background-desktop.jpg) no-repeat center center fixed; 
   background-color: #0A111C;
+  background-size: cover;
 }
 
 .grid {
@@ -59,7 +61,8 @@ body {
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
+  background-color: rgba(0, 0, 0, 0.7);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
