@@ -6,7 +6,7 @@ const CurrentTweet = ({ twitterData }) => {
   const [currentTweet, setCurrentTweet] = useState()
 
   useEffect(() => {
-    const newIndex = Math.floor(Math.random(0, 1) * twitterData.length)
+    const newIndex = Math.floor(Math.random() * twitterData.length)
     console.log(twitterData[newIndex])
     setCurrentTweet(twitterData[newIndex])
     // setInterval(() => {
@@ -16,7 +16,7 @@ const CurrentTweet = ({ twitterData }) => {
   }, [twitterData])
 
   const nextClickHandler = () => {
-    const newIndex = Math.floor(Math.random(0, 1) * twitterData.length)
+    const newIndex = Math.floor(Math.random() * twitterData.length)
     setCurrentTweet(twitterData[newIndex])
   }
 

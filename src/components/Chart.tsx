@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from "react"
 import OrdinalFrame from "semiotic/lib/OrdinalFrame"
-import { scaleSqrt} from "d3-scale"
+import { scaleSqrt } from "d3-scale"
+import { IFrameProps, ITopTwentyWords, IChartData } from "../interfaces/interfaces"
 
 const Chart = (({ twitterData, topTwentyWords, handleHover, handleCycleOn }) => {
-  const [frameProps, setFrameProps] = useState({})
+  const [frameProps, setFrameProps] = useState<IFrameProps | undefined>(undefined)
   const [hoveredOn, setHoveredOn] = useState()
   const [cycleTweet, setCycleTweet] = useState(0)
   const [cycleOn, setCycleOn] = useState(topTwentyWords[0])
 
   useEffect(() => {
     if(twitterData.length > 0) {
-      let r = -12
-      let g = 207
-      let b = 255
+      let r: number = -12
+      let g: number = 207
+      let b: number = 255
       // max r is 255; each "step" between 0 and 255 is 12.75 points for 20 steps
       // max g is 255; each "step" between 209 and 255 is 2.3 points for 20 steps
-      let data = topTwentyWords.map((word, index) => {
+      let data: Array<IChartData> = topTwentyWords.map((word: ITopTwentyWords, index: number) => {
         r += 12
         g += 2
         return {
@@ -39,10 +40,9 @@ const Chart = (({ twitterData, topTwentyWords, handleHover, handleCycleOn }) => 
         style: d=> ({ fill: d.color, fillOpacity: d.fillOpacity }),
         oPadding: 10,
         pieceHoverAnnotation: true,
-        tooltipContent: d => {
-          return (
-          <div></div>
-        )},
+        tooltipContent: () => {
+          return (<div></div>)
+        },
         customHoverBehavior: d => {
           setHoveredOn(d)
         }
@@ -52,8 +52,8 @@ const Chart = (({ twitterData, topTwentyWords, handleHover, handleCycleOn }) => 
   }, [twitterData, topTwentyWords])
 
   useEffect(() => {
-    let index;
-    if(frameProps.data && hoveredOn) {
+    let index: number | undefined;
+    if(frameProps && frameProps.data && hoveredOn) {
       for(let i=0;i<frameProps.data.length;i++) {
         if(frameProps.data[i].word === hoveredOn.word) {
           index = i
@@ -69,7 +69,7 @@ const Chart = (({ twitterData, topTwentyWords, handleHover, handleCycleOn }) => 
         }
       : undefined
     )
-  }, [hoveredOn, handleHover, frameProps.data])
+  }, [hoveredOn, handleHover, frameProps])
 
   useEffect(() => {
     handleCycleOn(cycleOn)

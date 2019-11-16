@@ -3,11 +3,12 @@ import Chart from "./Chart"
 import CurrentTweet from "./CurrentTweet"
 import TopWord from "./TopWord"
 import stopwords from "../stopwords"
+import { ITopTwentyWords, ITweets, ITopWord } from "../interfaces/interfaces"
 
 const MainLayout = () => {
   const [twitterData, setTwitterData] = useState([])
-  const [topTwentyWords, setTopTwentyWords] = useState([])
-  const [topWord, setTopWord] = useState({})
+  const [topTwentyWords, setTopTwentyWords] = useState<Array<ITopTwentyWords>>([])
+  const [topWord, setTopWord] = useState<ITopWord | undefined>(undefined)
   const [freezeCycle, setFreezeCycle] = useState(false)
 
   useEffect(() => {
@@ -25,7 +26,7 @@ const MainLayout = () => {
     }
     if(!localStorage.getItem("twitterData")) fetchData();
     else {
-      setTwitterData(JSON.parse(localStorage.getItem("twitterData")))
+      setTwitterData(JSON.parse(localStorage.getItem("twitterData") || '{}'))
     }
   }, [])
 
@@ -41,19 +42,19 @@ const MainLayout = () => {
       let allWords = []
       let wordCounts = {}
   
-      twitterData.map(tweet => {
+      twitterData.map((tweet: ITweets) => {
         // remove urls and @'s
-        let words = tweet.text.replace(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)/g, "")
+        let words: string | Array<string> = tweet.text.replace(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)/g, "")
         words = words.replace(/(^|)@\w+/g, "")
   
         // split tweet into words
         words = tweet.text.split(/\b/);
   
         // for each word, sanitize the word and then add it to wordCounts and allWords
-        words.map(word => {
-          word = word.trim()
-          word = word.toLowerCase()
-          if(word.length === 1) word = null
+        words.map((word: string | null) => {
+          word = word ? word.trim() : word
+          word = word ? word.toLowerCase() : word
+          if(word && word.length === 1) word = null
           if(word && word.match(/[^a-zA-Z0-9\d\s:]/g)) word = null
           
           if(word && stopwords.indexOf(word.toLowerCase()) < 0) {
@@ -90,10 +91,10 @@ const MainLayout = () => {
   useEffect(() => {
     const selectAll = document.querySelectorAll(`.pieces > g > path`)
     if(topWord && selectAll.length > 0) {
-      const selectThis = document.querySelector(`.pieces > g:nth-child(${topWord.index + 1}) > path`)
+      const selectThis: any = document.querySelector(`.pieces > g:nth-child(${topWord.index + 1}) > path`)
       if(selectThis) {
         // if(freezeCycle) {
-          selectAll.forEach(el => {
+          selectAll.forEach((el: any) => {
             el.style.fillOpacity = 0.4;
           })
         // }
