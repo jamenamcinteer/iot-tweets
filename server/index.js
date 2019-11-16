@@ -63,6 +63,7 @@ app.get("/tweets", function(req, res) {
           created_at: data.statuses[i].created_at,
           id: data.statuses[i].id,
           text: data.statuses[i].text,
+          __html: data.statuses[i].text,
           user_name: data.statuses[i].user.name,
           user_screen_name: data.statuses[i].user.screen_name,
           user_profile_image_url_https: data.statuses[i].user.profile_image_url_https

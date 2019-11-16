@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react"
 import OrdinalFrame from "semiotic/lib/OrdinalFrame"
 import { scaleSqrt} from "d3-scale"
+import moment from "moment"
 
 const Chart = (() => {
   const [twitterData, setTwitterData] = useState([])
   const [topTwentyWords, setTopTwentyWords] = useState([])
   const [frameProps, setFrameProps] = useState({})
   const [hoveredOn, setHoveredOn] = useState()
+  const [currentTweet, setCurrentTweet] = useState()
 
   useEffect(() => {
     async function fetchData() {
@@ -135,11 +137,33 @@ const Chart = (() => {
     }
     
   }, [hoveredOn])
+
+  useEffect(() => {
+    const newIndex = Math.floor(Math.random() * 100);
+    console.log(twitterData[newIndex])
+    setCurrentTweet(twitterData[newIndex])
+  }, [twitterData])
   
 
   return (
-  <div>
-    <OrdinalFrame {...frameProps} />
+  <div className="grid">
+    <div className="grid__chart">
+      <div className="grid__chartFrame">
+        <OrdinalFrame {...frameProps} />
+      </div>
+    </div>
+    <div className="grid__tweets">
+      <div className="grid__tweetsContainer">
+        {currentTweet && (
+          <div>
+            <img src={currentTweet.user_profile_image_url_https} alt="" />
+            <p>{currentTweet.user_screen_name} @{currentTweet.user_name} <span className="tweet__date">· {moment(currentTweet.created_at).fromNow()}</span></p>
+            <p dangerouslySetInnerHTML={currentTweet}></p>
+          </div>
+        )}
+        
+      </div>
+    </div>
   </div>)
 })
 
