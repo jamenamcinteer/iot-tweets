@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import OrdinalFrame from "semiotic/lib/OrdinalFrame"
 import { scaleSqrt} from "d3-scale"
 import moment from "moment"
+import NextTweetButton from "./components/NextTweetButton"
 
 const Chart = (() => {
   const [twitterData, setTwitterData] = useState([])
@@ -15,6 +16,7 @@ const Chart = (() => {
       try {
         const response = await fetch('/tweets');
         const json = await response.json();
+        // BUG: sometimes we don't get the full 100, but rather something in the 90's
         console.log(json)
         setTwitterData(json)
         localStorage.setItem("twitterData", JSON.stringify(json))
@@ -139,10 +141,19 @@ const Chart = (() => {
   }, [hoveredOn])
 
   useEffect(() => {
-    const newIndex = Math.floor(Math.random() * 100);
+    const newIndex = Math.floor(Math.random(0, 1) * twitterData.length)
     console.log(twitterData[newIndex])
     setCurrentTweet(twitterData[newIndex])
+    setInterval(() => {
+      const newIndex = Math.floor(Math.random(0, 1) * twitterData.length)
+      setCurrentTweet(twitterData[newIndex])
+    }, 15000)
   }, [twitterData])
+
+  const nextClickHander = () => {
+    const newIndex = Math.floor(Math.random(0, 1) * twitterData.length)
+    setCurrentTweet(twitterData[newIndex])
+  }
   
 
   return (
@@ -159,6 +170,7 @@ const Chart = (() => {
             <img src={currentTweet.user_profile_image_url_https} alt="" />
             <p>{currentTweet.user_screen_name} @{currentTweet.user_name} <span className="tweet__date">· {moment(currentTweet.created_at).fromNow()}</span></p>
             <p dangerouslySetInnerHTML={currentTweet}></p>
+            <NextTweetButton clickHandler={nextClickHander} />
           </div>
         )}
         
