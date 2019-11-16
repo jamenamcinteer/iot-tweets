@@ -91,12 +91,14 @@ const MainLayout = () => {
     const selectAll = document.querySelectorAll(`.pieces > g > path`)
     if(topWord && selectAll.length > 0) {
       const selectThis = document.querySelector(`.pieces > g:nth-child(${topWord.index + 1}) > path`)
-      // if(freezeCycle) {
-        selectAll.forEach(el => {
-          el.style.fillOpacity = 0.4;
-        })
-      // }
-      selectThis.style.fillOpacity = 1;
+      if(selectThis) {
+        // if(freezeCycle) {
+          selectAll.forEach(el => {
+            el.style.fillOpacity = 0.4;
+          })
+        // }
+        selectThis.style.fillOpacity = 1;
+      }
     }
   }, [topWord, freezeCycle])
 
