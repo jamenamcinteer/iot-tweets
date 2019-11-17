@@ -23,7 +23,7 @@ const GlobalStyles = createGlobalStyle`
   }
 `
 
-const AppContainer = styled.div`
+const AppContainer = styled.main`
   text-align: center;
 `
 
