@@ -1,0 +1,828 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders as expected 1`] = `
+<DocumentFragment>
+  .c11 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: 0;
+  border-radius: 1.6rem;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+}
+
+.c8 {
+  border-radius: 9999px;
+  display: inline-block;
+}
+
+.c9 {
+  border-radius: 9999px;
+  display: block;
+}
+
+.c10 {
+  white-space: nowrap;
+}
+
+.c3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.c4 {
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: .5rem;
+  padding: 0;
+}
+
+.c5 {
+  margin: 0;
+  padding: 0;
+}
+
+.c0 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 3rem 9rem;
+  width: 100%;
+}
+
+.c2 {
+  position: relative;
+  margin: 0 auto;
+}
+
+.c7 {
+  max-width: 25rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width:80rem) {
+  .c0 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width:90rem) {
+  .c0 {
+    grid-template-columns: 1fr 400px 25rem 1fr;
+  }
+}
+
+@media (min-width:90rem) {
+  .c1 {
+    grid-column: 2;
+  }
+}
+
+@media (min-width:28rem) {
+  .c2 {
+    width: 400px;
+  }
+}
+
+@media (min-width:80rem) {
+  .c2 {
+    float: right;
+    margin: 0;
+  }
+}
+
+@media (min-width:90rem) {
+  .c2 {
+    float: none;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width:90rem) {
+  .c6 {
+    grid-column: 3;
+  }
+}
+
+@media (min-width:80rem) {
+  .c7 {
+    margin: 0;
+  }
+}
+
+@media (min-width:90rem) {
+  .c7 {
+    margin: 0 auto;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <div
+          class=" radial frame ordinalframe"
+          style="background: none;"
+        >
+          <div
+            class="frame-elements"
+            style="height: 400px; width: 400px;"
+          >
+            <div
+              class="visualization-layer"
+              style="position: absolute;"
+            >
+              <svg
+                class="visualization-layer"
+                height="400"
+                style="position: absolute;"
+                width="400"
+              >
+                <defs>
+                  <filter
+                    id="paintyFilterHeavy"
+                  >
+                    <fegaussianblur
+                      color-interpolation-filters="sRGB"
+                      id="gaussblurrer"
+                      in="SourceGraphic"
+                      result="blur"
+                      stdDeviation="4"
+                    />
+                    <fecolormatrix
+                      in="blur"
+                      mode="matrix"
+                      result="gooey"
+                      values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 34 -7"
+                    />
+                  </filter>
+                  <filter
+                    id="paintyFilterLight"
+                  >
+                    <fegaussianblur
+                      color-interpolation-filters="sRGB"
+                      id="gaussblurrer"
+                      in="SourceGraphic"
+                      result="blur"
+                      stdDeviation="2"
+                    />
+                    <fecolormatrix
+                      in="blur"
+                      mode="matrix"
+                      result="gooey"
+                      values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 34 -7"
+                    />
+                  </filter>
+                  <clippath
+                    id="matte-clip-undefined"
+                  />
+                </defs>
+                <g
+                  aria-label="Visualization with no title. Use arrow keys to navigate elements."
+                  class="data-visualization"
+                  role="group"
+                  transform="translate(50,50)"
+                >
+                  <g
+                    aria-label="20 bars in a bar chart"
+                    class="pieces"
+                    role="group"
+                    tabindex="0"
+                  >
+                    <g
+                      aria-label="70 bar value 8"
+                      class=""
+                    >
+                      <path
+                        aria-label="70 bar value 8"
+                        class=""
+                        d="M-106.78909763936157,-169.10378063594825A200,200,0,0,1,-96.05792301320048,-175.42199242509488L-86.81474506162255,-158.54200333369337A180.75499102701247,180.75499102701247,0,0,0,-96.5133119279278,-152.83176175742355Z"
+                        role="img"
+                        style="fill: rgb(192, 241, 255); fill-opacity: 1;"
+                        tabindex="-1"
+                        transform="translate(150,150)"
+                      />
+                    </g>
+                    <g
+                      aria-label="iot bar value 54"
+                      class=""
+                    >
+                      <path
+                        aria-label="iot bar value 54"
+                        class=""
+                        d="M20.905692653530693,-198.90437907365467A200,200,0,0,1,180.64417033918954,-85.83521260220581L135.48312775439214,-64.37640945165435A150,150,0,0,0,15.679269490148018,-149.178284305241Z"
+                        role="img"
+                        style="fill: rgb(0, 209, 255); fill-opacity: 0.4;"
+                        tabindex="-1"
+                        transform="translate(150,150)"
+                      />
+                    </g>
+                    <g
+                      aria-label="ai bar value 34"
+                      class=""
+                    >
+                      <path
+                        aria-label="ai bar value 34"
+                        class=""
+                        d="M188.6268055405209,-66.4825408026687A200,200,0,0,1,192.9582273303274,52.60344575726668L154.6805226031598,42.16834178587068A160.3253976192064,160.3253976192064,0,0,0,151.2083379996237,-53.294198944614855Z"
+                        role="img"
+                        style="fill: rgb(12, 211, 255); fill-opacity: 0.4;"
+                        tabindex="-1"
+                        transform="translate(150,150)"
+                      />
+                    </g>
+                    <g
+                      aria-label="mikequindazzi bar value 31"
+                      class=""
+                    >
+                      <path
+                        aria-label="mikequindazzi bar value 31"
+                        class=""
+                        d="M186.40262462386892,72.48490555510865A200,200,0,0,1,122.23474281957,158.2992976858507L99.08113681599177,128.31437290328284A162.11616195281707,162.11616195281707,0,0,0,151.0943904097665,58.75487344053322Z"
+                        role="img"
+                        style="fill: rgb(24, 213, 255); fill-opacity: 0.4;"
+                        tabindex="-1"
+                        transform="translate(150,150)"
+                      />
+                    </g>
+                    <g
+                      aria-label="bigdata bar value 15"
+                      class=""
+                    >
+                      <path
+                        aria-label="bigdata bar value 15"
+                        class=""
+                        d="M105.01834578532139,170.20912739484527A200,200,0,0,1,67.53149622298518,188.2538101019072L58.63344031199804,163.44919267995547A173.6476861652635,173.6476861652635,0,0,0,91.18096375262306,147.78210568161722Z"
+                        role="img"
+                        style="fill: rgb(36, 215, 255); fill-opacity: 0.4;"
+                        tabindex="-1"
+                        transform="translate(150,150)"
+                      />
+                    </g>
+                    <g
+                      aria-label="security bar value 14"
+                      class=""
+                    >
+                      <path
+                        aria-label="security bar value 14"
+                        class=""
+                        d="M47.48367014650565,194.28149955520172A200,200,0,0,1,10.432448153409007,199.72772472925843L9.10446250488959,174.3036298138937A174.54124613913422,174.54124613913422,0,0,0,41.439294793153515,169.5506751707228Z"
+                        role="img"
+                        style="fill: rgb(48, 217, 255); fill-opacity: 0.4;"
+                        tabindex="-1"
+                        transform="translate(150,150)"
+                      />
+                    </g>
+                    <g
+                      aria-label="stocks bar value 14"
+                      class=""
+                    >
+                      <path
+                        aria-label="stocks bar value 14"
+                        class=""
+                        d="M-10.501934027034844,199.72408312893018A200,200,0,0,1,-47.55125900254982,194.26496793625049L-41.49828000894885,169.53624792386054A174.54124613913422,174.54124613913422,0,0,0,-9.16510325974819,174.30045176659752Z"
+                        role="img"
+                        style="fill: rgb(60, 219, 255); fill-opacity: 0.4;"
+                        tabindex="-1"
+                        transform="translate(150,150)"
+                      />
+                    </g>
+                    <g
+                      aria-label="wef bar value 13"
+                      class=""
+                    >
+                      <path
+                        aria-label="wef bar value 13"
+                        class=""
+                        d="M-67.5969867954797,188.23030408563798A200,200,0,0,1,-97.88356956221698,174.40988162876158L-85.8768434633827,153.01618208334813A175.46733092686708,175.46733092686708,0,0,0,-59.3053142585075,165.1413452872973Z"
+                        role="img"
+                        style="fill: rgb(72, 221, 255); fill-opacity: 0.4;"
+                        tabindex="-1"
+                        transform="translate(150,150)"
+                      />
+                    </g>
+                    <g
+                      aria-label="mt bar value 13"
+                      class=""
+                    >
+                      <path
+                        aria-label="mt bar value 13"
+                        class=""
+                        d="M-115.57815003177613,163.22282694290112A200,200,0,0,1,-141.051865017027,141.78988460118865L-123.74997138397234,124.3974630169953A175.46733092686708,175.46733092686708,0,0,0,-101.40094749770378,143.20136895004393Z"
+                        role="img"
+                        style="fill: rgb(84, 223, 255); fill-opacity: 0.4;"
+                        tabindex="-1"
+                        transform="translate(150,150)"
+                      />
+                    </g>
+                    <g
+                      aria-label="5g bar value 12"
+                      class=""
+                    >
+                      <path
+                        aria-label="5g bar value 12"
+                        class=""
+                        d="M-155.10024688622372,126.2692100863566A200,200,0,0,1,-171.79672967779365,102.40060386548066L-151.55029092098695,90.33257696700088A176.42977396044841,176.42977396044841,0,0,0,-136.82150749673096,111.38824096850132Z"
+                        role="img"
+                        style="fill: rgb(96, 225, 255); fill-opacity: 0.4;"
+                        tabindex="-1"
+                        transform="translate(150,150)"
+                      />
+                    </g>
+                    <g
+                      aria-label="cc bar value 11"
+                      class=""
+                    >
+                      <path
+                        aria-label="cc bar value 11"
+                        class=""
+                        d="M-181.5593869769687,83.88199449552522A200,200,0,0,1,-190.59460312786317,60.61103248198575L-169.08907707887553,53.772055320481726A177.433226653789,177.433226653789,0,0,0,-161.0733393030374,74.41726470748205Z"
+                        role="img"
+                        style="fill: rgb(108, 227, 255); fill-opacity: 0.4;"
+                        tabindex="-1"
+                        transform="translate(150,150)"
+                      />
+                    </g>
+                    <g
+                      aria-label="business bar value 11"
+                      class=""
+                    >
+                      <path
+                        aria-label="business bar value 11"
+                        class=""
+                        d="M-195.88608403209412,40.35643793214867A200,200,0,0,1,-199.38755441958477,15.639793559286975L-176.88988567637438,13.875095177117176A177.433226653789,177.433226653789,0,0,0,-173.78349973194858,35.80286499277251Z"
+                        role="img"
+                        style="fill: rgb(120, 229, 255); fill-opacity: 0.4;"
+                        tabindex="-1"
+                        transform="translate(150,150)"
+                      />
+                    </g>
+                    <g
+                      aria-label="fisher85m bar value 10"
+                      class=""
+                    >
+                      <path
+                        aria-label="fisher85m bar value 10"
+                        class=""
+                        d="M-199.93009212078584,-5.287557524424171A200,200,0,0,1,-198.30030624058793,-26.019003533745106L-176.96659002898716,-23.219804440103253A178.48342585440324,178.48342585440324,0,0,0,-178.42103886552144,-4.718706906807268Z"
+                        role="img"
+                        style="fill: rgb(132, 231, 255); fill-opacity: 0.4;"
+                        tabindex="-1"
+                        transform="translate(150,150)"
+                      />
+                    </g>
+                    <g
+                      aria-label="years bar value 10"
+                      class=""
+                    >
+                      <path
+                        aria-label="years bar value 10"
+                        class=""
+                        d="M-194.49426995936054,-46.60449498680765A200,200,0,0,1,-188.6036644397265,-66.54816120605476L-168.31314078948336,-59.38871898183874A178.48342585440324,178.48342585440324,0,0,0,-173.57001805698908,-41.59064962729896Z"
+                        role="img"
+                        style="fill: rgb(144, 233, 255); fill-opacity: 0.4;"
+                        tabindex="-1"
+                        transform="translate(150,150)"
+                      />
+                    </g>
+                    <g
+                      aria-label="chainofthings bar value 9"
+                      class=""
+                    >
+                      <path
+                        aria-label="chainofthings bar value 9"
+                        class=""
+                        d="M-180.61429680784164,-85.89805462645171A200,200,0,0,1,-172.8561270707151,-100.60198474241349L-155.21407247750918,-90.33433767032301A179.58758547680685,179.58758547680685,0,0,0,-162.18042733155812,-77.13112113759661Z"
+                        role="img"
+                        style="fill: rgb(156, 235, 255); fill-opacity: 0.4;"
+                        tabindex="-1"
+                        transform="translate(150,150)"
+                      />
+                    </g>
+                    <g
+                      aria-label="today bar value 9"
+                      class=""
+                    >
+                      <path
+                        aria-label="today bar value 9"
+                        class=""
+                        d="M-161.3934322535862,-118.11926187293535A200,200,0,0,1,-151.02557589463208,-131.11550413926923L-135.6115926008061,-117.73358403472817A179.58758547680685,179.58758547680685,0,0,0,-144.92128405118075,-106.06376519031555Z"
+                        role="img"
+                        style="fill: rgb(168, 237, 255); fill-opacity: 0.4;"
+                        tabindex="-1"
+                        transform="translate(150,150)"
+                      />
+                    </g>
+                    <g
+                      aria-label="meets bar value 9"
+                      class=""
+                    >
+                      <path
+                        aria-label="meets bar value 9"
+                        class=""
+                        d="M-136.49293982957323,-146.1837110511308A200,200,0,0,1,-123.88025411159147,-157.0149121620221L-111.23677862076993,-140.98964479515234A179.58758547680685,179.58758547680685,0,0,0,-122.56218749312067,-131.26389851855896Z"
+                        role="img"
+                        style="fill: rgb(180, 239, 255); fill-opacity: 0.4;"
+                        tabindex="-1"
+                        transform="translate(150,150)"
+                      />
+                    </g>
+                    <g
+                      aria-label="singingindcloud bar value 8"
+                      class=""
+                    >
+                      <path
+                        aria-label="singingindcloud bar value 8"
+                        class=""
+                        d="M-77.19511636868278,-184.50179947313666A200,200,0,0,1,-65.56301384010493,-188.94838241224033L-59.2542098918603,-170.7668158374651A180.75499102701247,180.75499102701247,0,0,0,-69.76701283275219,-166.74810554117235Z"
+                        role="img"
+                        style="fill: rgb(204, 243, 255); fill-opacity: 0.4;"
+                        tabindex="-1"
+                        transform="translate(150,150)"
+                      />
+                    </g>
+                    <g
+                      aria-label="machin bar value 8"
+                      class=""
+                    >
+                      <path
+                        aria-label="machin bar value 8"
+                        class=""
+                        d="M-45.45336873985713,-194.76650448729262A200,200,0,0,1,-33.24397326999239,-197.21774322110076L-30.045070450598583,-178.24045703148857A180.75499102701247,180.75499102701247,0,0,0,-41.07961629360183,-176.0250888548158Z"
+                        role="img"
+                        style="fill: rgb(216, 245, 255); fill-opacity: 0.4;"
+                        tabindex="-1"
+                        transform="translate(150,150)"
+                      />
+                    </g>
+                    <g
+                      aria-label="antgrasso bar value 8"
+                      class=""
+                    >
+                      <path
+                        aria-label="antgrasso bar value 8"
+                        class=""
+                        d="M-12.446991678028759,-199.6123052273258A200,200,0,0,1,-3.6739403974420595e-14,-200L-3.32041531786709e-14,-180.75499102701247A180.75499102701247,180.75499102701247,0,0,0,-11.249279345376937,-180.40460220123273Z"
+                        role="img"
+                        style="fill: rgb(228, 247, 255); fill-opacity: 0.4;"
+                        tabindex="-1"
+                        transform="translate(150,150)"
+                      />
+                    </g>
+                  </g>
+                </g>
+                <g
+                  aria-hidden="true"
+                  class="foreground-graphics"
+                />
+              </svg>
+            </div>
+            <div
+              class="interaction-layer"
+              style="position: absolute; background: none; pointer-events: none;"
+            >
+              <svg
+                height="400"
+                style="background: none; pointer-events: none;"
+                width="400"
+              >
+                <g
+                  class="interaction-overlay"
+                  style="pointer-events: all;"
+                  transform="translate(50,50)"
+                >
+                  <g
+                    class="interaction-regions"
+                  >
+                    <g
+                      class=""
+                    >
+                      <path
+                        class=""
+                        d="M-106.78909763936157,-169.10378063594825A200,200,0,0,1,-96.05792301320048,-175.42199242509488L-86.81474506162255,-158.54200333369337A180.75499102701247,180.75499102701247,0,0,0,-96.5133119279278,-152.83176175742355Z"
+                        style="opacity: 0; cursor: pointer;"
+                        transform="translate(150,150)"
+                        type="frame-hover"
+                      />
+                    </g>
+                    <g
+                      class=""
+                    >
+                      <path
+                        class=""
+                        d="M20.905692653530693,-198.90437907365467A200,200,0,0,1,180.64417033918954,-85.83521260220581L135.48312775439214,-64.37640945165435A150,150,0,0,0,15.679269490148018,-149.178284305241Z"
+                        style="opacity: 0; cursor: pointer;"
+                        transform="translate(150,150)"
+                        type="frame-hover"
+                      />
+                    </g>
+                    <g
+                      class=""
+                    >
+                      <path
+                        class=""
+                        d="M188.6268055405209,-66.4825408026687A200,200,0,0,1,192.9582273303274,52.60344575726668L154.6805226031598,42.16834178587068A160.3253976192064,160.3253976192064,0,0,0,151.2083379996237,-53.294198944614855Z"
+                        style="opacity: 0; cursor: pointer;"
+                        transform="translate(150,150)"
+                        type="frame-hover"
+                      />
+                    </g>
+                    <g
+                      class=""
+                    >
+                      <path
+                        class=""
+                        d="M186.40262462386892,72.48490555510865A200,200,0,0,1,122.23474281957,158.2992976858507L99.08113681599177,128.31437290328284A162.11616195281707,162.11616195281707,0,0,0,151.0943904097665,58.75487344053322Z"
+                        style="opacity: 0; cursor: pointer;"
+                        transform="translate(150,150)"
+                        type="frame-hover"
+                      />
+                    </g>
+                    <g
+                      class=""
+                    >
+                      <path
+                        class=""
+                        d="M105.01834578532139,170.20912739484527A200,200,0,0,1,67.53149622298518,188.2538101019072L58.63344031199804,163.44919267995547A173.6476861652635,173.6476861652635,0,0,0,91.18096375262306,147.78210568161722Z"
+                        style="opacity: 0; cursor: pointer;"
+                        transform="translate(150,150)"
+                        type="frame-hover"
+                      />
+                    </g>
+                    <g
+                      class=""
+                    >
+                      <path
+                        class=""
+                        d="M47.48367014650565,194.28149955520172A200,200,0,0,1,10.432448153409007,199.72772472925843L9.10446250488959,174.3036298138937A174.54124613913422,174.54124613913422,0,0,0,41.439294793153515,169.5506751707228Z"
+                        style="opacity: 0; cursor: pointer;"
+                        transform="translate(150,150)"
+                        type="frame-hover"
+                      />
+                    </g>
+                    <g
+                      class=""
+                    >
+                      <path
+                        class=""
+                        d="M-10.501934027034844,199.72408312893018A200,200,0,0,1,-47.55125900254982,194.26496793625049L-41.49828000894885,169.53624792386054A174.54124613913422,174.54124613913422,0,0,0,-9.16510325974819,174.30045176659752Z"
+                        style="opacity: 0; cursor: pointer;"
+                        transform="translate(150,150)"
+                        type="frame-hover"
+                      />
+                    </g>
+                    <g
+                      class=""
+                    >
+                      <path
+                        class=""
+                        d="M-67.5969867954797,188.23030408563798A200,200,0,0,1,-97.88356956221698,174.40988162876158L-85.8768434633827,153.01618208334813A175.46733092686708,175.46733092686708,0,0,0,-59.3053142585075,165.1413452872973Z"
+                        style="opacity: 0; cursor: pointer;"
+                        transform="translate(150,150)"
+                        type="frame-hover"
+                      />
+                    </g>
+                    <g
+                      class=""
+                    >
+                      <path
+                        class=""
+                        d="M-115.57815003177613,163.22282694290112A200,200,0,0,1,-141.051865017027,141.78988460118865L-123.74997138397234,124.3974630169953A175.46733092686708,175.46733092686708,0,0,0,-101.40094749770378,143.20136895004393Z"
+                        style="opacity: 0; cursor: pointer;"
+                        transform="translate(150,150)"
+                        type="frame-hover"
+                      />
+                    </g>
+                    <g
+                      class=""
+                    >
+                      <path
+                        class=""
+                        d="M-155.10024688622372,126.2692100863566A200,200,0,0,1,-171.79672967779365,102.40060386548066L-151.55029092098695,90.33257696700088A176.42977396044841,176.42977396044841,0,0,0,-136.82150749673096,111.38824096850132Z"
+                        style="opacity: 0; cursor: pointer;"
+                        transform="translate(150,150)"
+                        type="frame-hover"
+                      />
+                    </g>
+                    <g
+                      class=""
+                    >
+                      <path
+                        class=""
+                        d="M-181.5593869769687,83.88199449552522A200,200,0,0,1,-190.59460312786317,60.61103248198575L-169.08907707887553,53.772055320481726A177.433226653789,177.433226653789,0,0,0,-161.0733393030374,74.41726470748205Z"
+                        style="opacity: 0; cursor: pointer;"
+                        transform="translate(150,150)"
+                        type="frame-hover"
+                      />
+                    </g>
+                    <g
+                      class=""
+                    >
+                      <path
+                        class=""
+                        d="M-195.88608403209412,40.35643793214867A200,200,0,0,1,-199.38755441958477,15.639793559286975L-176.88988567637438,13.875095177117176A177.433226653789,177.433226653789,0,0,0,-173.78349973194858,35.80286499277251Z"
+                        style="opacity: 0; cursor: pointer;"
+                        transform="translate(150,150)"
+                        type="frame-hover"
+                      />
+                    </g>
+                    <g
+                      class=""
+                    >
+                      <path
+                        class=""
+                        d="M-199.93009212078584,-5.287557524424171A200,200,0,0,1,-198.30030624058793,-26.019003533745106L-176.96659002898716,-23.219804440103253A178.48342585440324,178.48342585440324,0,0,0,-178.42103886552144,-4.718706906807268Z"
+                        style="opacity: 0; cursor: pointer;"
+                        transform="translate(150,150)"
+                        type="frame-hover"
+                      />
+                    </g>
+                    <g
+                      class=""
+                    >
+                      <path
+                        class=""
+                        d="M-194.49426995936054,-46.60449498680765A200,200,0,0,1,-188.6036644397265,-66.54816120605476L-168.31314078948336,-59.38871898183874A178.48342585440324,178.48342585440324,0,0,0,-173.57001805698908,-41.59064962729896Z"
+                        style="opacity: 0; cursor: pointer;"
+                        transform="translate(150,150)"
+                        type="frame-hover"
+                      />
+                    </g>
+                    <g
+                      class=""
+                    >
+                      <path
+                        class=""
+                        d="M-180.61429680784164,-85.89805462645171A200,200,0,0,1,-172.8561270707151,-100.60198474241349L-155.21407247750918,-90.33433767032301A179.58758547680685,179.58758547680685,0,0,0,-162.18042733155812,-77.13112113759661Z"
+                        style="opacity: 0; cursor: pointer;"
+                        transform="translate(150,150)"
+                        type="frame-hover"
+                      />
+                    </g>
+                    <g
+                      class=""
+                    >
+                      <path
+                        class=""
+                        d="M-161.3934322535862,-118.11926187293535A200,200,0,0,1,-151.02557589463208,-131.11550413926923L-135.6115926008061,-117.73358403472817A179.58758547680685,179.58758547680685,0,0,0,-144.92128405118075,-106.06376519031555Z"
+                        style="opacity: 0; cursor: pointer;"
+                        transform="translate(150,150)"
+                        type="frame-hover"
+                      />
+                    </g>
+                    <g
+                      class=""
+                    >
+                      <path
+                        class=""
+                        d="M-136.49293982957323,-146.1837110511308A200,200,0,0,1,-123.88025411159147,-157.0149121620221L-111.23677862076993,-140.98964479515234A179.58758547680685,179.58758547680685,0,0,0,-122.56218749312067,-131.26389851855896Z"
+                        style="opacity: 0; cursor: pointer;"
+                        transform="translate(150,150)"
+                        type="frame-hover"
+                      />
+                    </g>
+                    <g
+                      class=""
+                    >
+                      <path
+                        class=""
+                        d="M-77.19511636868278,-184.50179947313666A200,200,0,0,1,-65.56301384010493,-188.94838241224033L-59.2542098918603,-170.7668158374651A180.75499102701247,180.75499102701247,0,0,0,-69.76701283275219,-166.74810554117235Z"
+                        style="opacity: 0; cursor: pointer;"
+                        transform="translate(150,150)"
+                        type="frame-hover"
+                      />
+                    </g>
+                    <g
+                      class=""
+                    >
+                      <path
+                        class=""
+                        d="M-45.45336873985713,-194.76650448729262A200,200,0,0,1,-33.24397326999239,-197.21774322110076L-30.045070450598583,-178.24045703148857A180.75499102701247,180.75499102701247,0,0,0,-41.07961629360183,-176.0250888548158Z"
+                        style="opacity: 0; cursor: pointer;"
+                        transform="translate(150,150)"
+                        type="frame-hover"
+                      />
+                    </g>
+                    <g
+                      class=""
+                    >
+                      <path
+                        class=""
+                        d="M-12.446991678028759,-199.6123052273258A200,200,0,0,1,-3.6739403974420595e-14,-200L-3.32041531786709e-14,-180.75499102701247A180.75499102701247,180.75499102701247,0,0,0,-11.249279345376937,-180.40460220123273Z"
+                        style="opacity: 0; cursor: pointer;"
+                        transform="translate(150,150)"
+                        type="frame-hover"
+                      />
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          class="c3"
+        >
+          <div>
+            <p
+              class="c4"
+              data-testid="top-word"
+            >
+              iot
+            </p>
+            <p
+              class="c5"
+              data-testid="top-wordcount"
+            >
+              used 54 times
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="c6"
+    >
+      <div
+        class="c7"
+      >
+        <div>
+          <div
+            class="c8"
+          >
+            <img
+              alt=""
+              class="c9"
+              data-testid="tweet-img"
+              src="https://pbs.twimg.com/profile_images/823638186429558787/D8CBNuC3_normal.jpg"
+            />
+          </div>
+          <p
+            class=""
+            data-testid="tweet-meta"
+          >
+            spiercy82 @Sean Piercy 
+            <span
+              class="c10"
+            >
+              · 19 hours ago
+            </span>
+          </p>
+          <p
+            class=""
+            data-testid="tweet-text"
+          >
+            RT @clark_robotics: Adobe has slashed the price of Photoshop in its early Black Friday sale: #ai #ml #dl #iot Cc: @MIKEQUINDAZZI https://t.…
+          </p>
+          <button
+            class="c11"
+          >
+            Another Tweet
+            <svg
+              fill="none"
+              style="width: 14px; height: 14px; margin-left: 5px;"
+              viewBox="0 0 12 12"
+            >
+              <path
+                d="M6 0.666664L5.06 1.60666L8.78 5.33333H0.666668V6.66666H8.78L5.06 10.3933L6 11.3333L11.3333 6L6 0.666664Z"
+                fill="white"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
