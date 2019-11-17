@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders as expected 1`] = `
+<DocumentFragment>
+  .c0 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.c1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: .5rem;
+  padding: 0;
+}
+
+.c2 {
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+<div
+    class="c0"
+  >
+    <div>
+      <p
+        class="c1"
+        data-testid="top-word"
+      >
+        AI
+      </p>
+      <p
+        class="c2"
+        data-testid="top-wordcount"
+      >
+        used 50 times
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;
