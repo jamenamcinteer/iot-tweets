@@ -38,7 +38,7 @@
     "coverage": "react-scripts test --watchAll=false --coverage",
     "eject": "react-scripts eject",
     "server-watch": "nodemon --watch server --exec yarn server-start",
-    "server-start": "yarn server-build && server",
+    "server-start": "yarn server",
     "server": "node server/index.js",
     "dev": "concurrently \"yarn server-watch\" \"yarn client-start\"",
     "start": "yarn run server",
