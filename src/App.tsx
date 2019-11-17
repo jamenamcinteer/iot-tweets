@@ -9,7 +9,7 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    background: url("/images/background-desktop.jpg") no-repeat center center fixed; 
+    background: url("/images/background-desktop.jpg") no-repeat center center fixed; /* TODO: need different sizes for mobile and tablet to help with performance / data usage */
     background-color: ${(props: IPropsTheme) => props.theme.pageBackgroundColor};
     background-size: cover;
     color: ${(props: IPropsTheme) => props.theme.baseFontColor};
@@ -31,18 +31,19 @@ const AppContainer = styled.div`
 
 const AppBody = styled.div`
   background-color: rgba(0, 0, 0, 0.7);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: ${(props: IPropsTheme) => props.theme.baseFontColor};
+  min-height: calc(100vh - 23rem);
+  padding-bottom: 5rem;
 `
 
 const AppHeader = styled.div`
   background-color: rgba(0, 0, 0, 0.7);
   margin: 0;
+  padding-bottom: 4rem;
+
+  @media (min-width: 80rem) {
+    padding-bottom: 8rem;
+  }
 `
 const AppHeaderText = styled.h1`
   font-size: 3rem;
@@ -62,7 +63,7 @@ function App() {
         <GlobalStyles />
         <AppHeader>
           <AppHeaderText>#IoT</AppHeaderText>
-          <AppHeaderSubtext>Top 20 words in 100 recent tweets</AppHeaderSubtext>
+          <AppHeaderSubtext>Top 20 Words in 100 Recent Tweets</AppHeaderSubtext>
         </AppHeader>
         <AppBody>
           <MainLayout />

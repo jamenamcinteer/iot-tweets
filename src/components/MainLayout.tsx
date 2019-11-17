@@ -8,31 +8,60 @@ import { ITopTwentyWords, ITweets, ITopWord } from "../interfaces/interfaces"
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-column-gap: 150px;
+  grid-template-columns: 1fr;
+  grid-gap: 3rem 9rem;
   width: 100%;
+
+  @media (min-width: 80rem) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (min-width: 90rem) {
+    grid-template-columns: 1fr 400px 25rem 1fr;
+  }
 `
 
 const GridChart = styled.div`
-  grid-column: 2;
+  @media (min-width: 90rem) {
+    grid-column: 2;
+  }
 `
 
 const GridChartFrame = styled.div`
-  width: 400px;
-  margin: 0 auto;
   position: relative;
+  margin: 0 auto;
+
+  @media (min-width: 28rem) {
+    width: 400px;
+  }
+  @media (min-width: 80rem) {
+    float: right;
+    margin: 0;
+  }
+  @media (min-width: 90rem) {
+    float: none;
+    margin: 0 auto;
+  }
 `
 
 const GridTweets = styled.div`
-  grid-column: 3;
+  @media (min-width: 90rem) {
+    grid-column: 3;
+  }
 `
 
 const GridTweetsContainer = styled.div`
-  max-width: 400px;
+  max-width: 25rem;
   display: flex;
   align-items: center;
-  margin: 0 auto;
   height: 100%;
+  margin: 0 auto;
+
+  @media (min-width: 80rem) {
+    margin: 0;
+  }
+  @media (min-width: 90rem) {
+    margin: 0 auto;
+  }
 `
 
 const MainLayout = () => {

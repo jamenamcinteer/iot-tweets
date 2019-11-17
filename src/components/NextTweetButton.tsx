@@ -1,20 +1,20 @@
 import React from "react"
 import styled from "styled-components"
+import { IPropsTheme } from "../interfaces/interfaces"
 
 const Button = styled.button`
   appearance: none;
   background-color: transparent;
-  /* border: 1px solid #808080; */
   border: 0;
-  border-radius: 25px;
-  box-shadow: 0px 0px 4px rgba(255, 255, 255, 1);
-  color: #FFFFFF;
-  cursor: pointer;
-  font-size: 1.2rem;
+  border-radius: 1.6rem;
+  box-shadow: ${(props: IPropsTheme) => props.theme.boxShadowPrimary};
   padding: 1rem 1.5rem;
+  color: ${(props: IPropsTheme) => props.theme.baseFontColor};
+  cursor: pointer;
+  font-size: ${(props: IPropsTheme) => props.theme.fontSizeSmall};
 
   &:hover, &:focus {
-    box-shadow: 0px 0px 4px rgba(0, 217, 255, 1);
+    box-shadow: ${(props: IPropsTheme) => props.theme.boxShadowSecondary};
   }
 `
 

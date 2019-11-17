@@ -24,7 +24,6 @@ exports[`renders as expected 1`] = `
 }
 
 .c1 {
-  font-size: 1.8rem;
   font-weight: bold;
   margin: 0;
   margin-bottom: .5rem;
@@ -32,7 +31,6 @@ exports[`renders as expected 1`] = `
 }
 
 .c2 {
-  font-size: 1rem;
   margin: 0;
   padding: 0;
 }

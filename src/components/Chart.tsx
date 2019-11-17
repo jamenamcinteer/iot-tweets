@@ -8,6 +8,7 @@ const Chart = (({ twitterData, topTwentyWords, handleHover, handleCycleOn }) => 
   const [hoveredOn, setHoveredOn] = useState()
   const [cycleTweet, setCycleTweet] = useState(0)
   const [cycleOn, setCycleOn] = useState(topTwentyWords[0])
+  const [windowWidth] = useState(window.innerWidth)
 
   useEffect(() => {
     if(twitterData.length > 0) {
@@ -28,9 +29,9 @@ const Chart = (({ twitterData, topTwentyWords, handleHover, handleCycleOn }) => 
       })
       let newFrameProps = {
         data: data,
-        size: [400, 400],
+        size: windowWidth >= 450 ? [400, 400] : [windowWidth, windowWidth],
         margin: 50,
-        type: { type: "bar", innerRadius: 200 },
+        type: { type: "bar", innerRadius: windowWidth >= 450 ? 200 : (windowWidth - 40) / 2 },
         projection: "radial",
         dynamicColumnWidth: "count",
         oAccessor: "word",
@@ -45,11 +46,14 @@ const Chart = (({ twitterData, topTwentyWords, handleHover, handleCycleOn }) => 
         },
         customHoverBehavior: d => {
           setHoveredOn(d)
+        },
+        customClickBehavior: d => {
+          setHoveredOn(d)
         }
       }
       setFrameProps(newFrameProps)
     }
-  }, [twitterData, topTwentyWords])
+  }, [twitterData, topTwentyWords, windowWidth])
 
   useEffect(() => {
     let index: number | undefined;

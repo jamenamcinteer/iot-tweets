@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { IPropsTheme } from "../interfaces/interfaces"
 
 const Container = styled.div`
   position: absolute;
@@ -7,7 +8,6 @@ const Container = styled.div`
   left: 0;
   height: 100%;
   width: 100%;
-  /* border: 1px solid white; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,14 +15,14 @@ const Container = styled.div`
 `
 
 const Word = styled.p`
-  font-size: 1.8rem;
+  font-size: ${(props: IPropsTheme) => props.theme.fontSizeLarge};
   font-weight: bold;
   margin: 0;
   margin-bottom: .5rem;
   padding: 0;
 `
 const Count = styled.p`
-  font-size: 1rem;
+  font-size: ${(props: IPropsTheme) => props.theme.fontSizeSmall};
   margin: 0;
   padding: 0;
 `
