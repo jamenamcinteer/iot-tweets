@@ -41,6 +41,7 @@
     "server-start": "yarn server",
     "server": "node server/index.js",
     "dev": "concurrently \"yarn server-watch\" \"yarn client-start\"",
+    "build": "yarn server && yarn client-build",
     "heroku-postbuild": "yarn server && yarn client-build"
   },
   "proxy": "http://localhost:3001",
