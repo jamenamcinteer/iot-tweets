@@ -20,7 +20,7 @@ const Button = styled.button`
 `
 
 const NextTweetButton = ({ clickHandler }: INextTweetButtonProps) => {
-  const onClick = (e) => {
+  const onClick = (e: any) => {
     e.preventDefault()
     e.target.blur()
     clickHandler()

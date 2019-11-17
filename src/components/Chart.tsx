@@ -89,7 +89,7 @@ const Chart = (({ twitterData, topTwentyWords, handleHover, handleCycleOn }: ICh
 
   useEffect(() => {
     let timerCount: number = 0;
-    const timer: NodeJS.Timeout = setInterval(() => {
+    const timer: any = setInterval(() => {
       timerCount++;
       setCycleTweet(timerCount)
       if(timerCount >= 20) clearInterval(timer)

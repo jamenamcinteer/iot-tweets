@@ -78,8 +78,8 @@ const MainLayout = ({ twitterData }: IMainLayoutProps) => {
   useEffect(() => {
     const getTopTwentyWords = () => {
       let topTwenty = [];
-      let allWords = []
-      let wordCounts = {}
+      let allWords: Array<string> = []
+      let wordCounts: any = {}
   
       twitterData.forEach((tweet: ITweets) => {
         // remove urls
@@ -105,7 +105,8 @@ const MainLayout = ({ twitterData }: IMainLayoutProps) => {
         return false;
       })
       for (let word of allWords) {
-          topTwenty.push({ word: word, count: wordCounts["_" + word] })
+          let newTopWord: ITopWord = { word: word, count: wordCounts["_" + word] }
+          topTwenty.push(newTopWord)
       }
       topTwenty.sort(sort)
       topTwenty = topTwenty.slice(0, 20)

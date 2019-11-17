@@ -8,12 +8,13 @@ export interface IFrameProps {
   dynamicColumnWidth: string,
   oAccessor: string,
   rAccessor: string,
-  rScaleType: () => {},
+  rScaleType: (d: any) => {},
   style: (d: object) => object,
   oPadding: number,
   pieceHoverAnnotation: boolean,
   tooltipContent: () => {},
-  customHoverBehavior: (d: any) => void
+  customHoverBehavior: (d: any) => void,
+  customClickBehavior: (d: any) => void
 }
 
 export interface IChartData {
@@ -37,7 +38,7 @@ export interface ITweets {
 export interface ITopWord {
   word: string,
   count: number,
-  index: number | undefined
+  index?: number | undefined
 }
 
 // -- Theme --
