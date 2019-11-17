@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import moment from "moment"
 import styled from "styled-components"
 import NextTweetButton from "./NextTweetButton"
-import { IPropsTheme, ITweets } from "../interfaces/interfaces"
+import { IPropsTheme, ITweets, ICurrentTweetProps } from "../interfaces/interfaces"
 
 const TweetUserProfileImageContainer = styled.div`
   border-radius: 9999px;
@@ -37,7 +37,7 @@ const TweetText = styled.p`
   font-size: ${(props: IPropsTheme) => props.theme.fontSizeMedium};
 `
 
-const CurrentTweet = ({ twitterData }) => {
+const CurrentTweet = ({ twitterData }: ICurrentTweetProps) => {
   const [currentTweet, setCurrentTweet] = useState<ITweets | undefined>()
 
   useEffect(() => {

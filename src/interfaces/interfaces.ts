@@ -1,3 +1,4 @@
+// -- Chart --
 export interface IFrameProps {
   data: Array<IChartData>,
   size: Array<number>,
@@ -15,11 +16,6 @@ export interface IFrameProps {
   customHoverBehavior: (d: any) => void
 }
 
-export interface ITopTwentyWords {
-  word: string,
-  count: number
-}
-
 export interface IChartData {
   word: string,
   count: number,
@@ -27,6 +23,7 @@ export interface IChartData {
   fillOpacity: number
 }
 
+// --- Tweets ---
 export interface ITweets {
   created_at: string,
   id: number,
@@ -40,9 +37,10 @@ export interface ITweets {
 export interface ITopWord {
   word: string,
   count: number,
-  index: number
+  index: number | undefined
 }
 
+// -- Theme --
 export interface IPropsTheme {
   theme: ITheme
 }
@@ -60,4 +58,28 @@ export interface ITheme {
   baseChartColorB: number,
   boxShadowPrimary: string,
   boxShadowSecondary: string
+}
+
+// --- React Component Props -->
+export interface IChartProps {
+  twitterData: Array<ITweets>,
+  topTwentyWords: Array<ITopWord>,
+  handleHover: (newTopWord: ITopWord | undefined) => void,
+  handleCycleOn: (newTopWord: ITopWord) => void
+}
+
+export interface ICurrentTweetProps {
+  twitterData: Array<ITweets>
+}
+
+export interface IMainLayoutProps {
+  twitterData: Array<ITweets>
+}
+
+export interface INextTweetButtonProps {
+  clickHandler: () => void
+}
+
+export interface ITopWordProps {
+  topWord: ITopWord
 }

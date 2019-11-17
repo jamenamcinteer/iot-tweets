@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { IPropsTheme } from "../interfaces/interfaces"
+import { IPropsTheme, ITopWordProps } from "../interfaces/interfaces"
 
 const Container = styled.div`
   position: absolute;
@@ -27,7 +27,7 @@ const Count = styled.p`
   padding: 0;
 `
 
-const TopWord = ({ topWord }) => {
+const TopWord = ({ topWord }: ITopWordProps) => {
   return (
     <Container>
       {topWord && topWord.word && (

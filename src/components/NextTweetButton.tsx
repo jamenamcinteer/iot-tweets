@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { IPropsTheme } from "../interfaces/interfaces"
+import { IPropsTheme, INextTweetButtonProps } from "../interfaces/interfaces"
 
 const Button = styled.button`
   appearance: none;
@@ -19,7 +19,7 @@ const Button = styled.button`
   }
 `
 
-const NextTweetButton = ({ clickHandler }) => {
+const NextTweetButton = ({ clickHandler }: INextTweetButtonProps) => {
   const onClick = (e) => {
     e.preventDefault()
     e.target.blur()

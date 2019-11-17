@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react"
 import OrdinalFrame from "semiotic/lib/OrdinalFrame"
 import { scaleSqrt } from "d3-scale"
-import { IFrameProps, ITopTwentyWords, IChartData, ITopWord } from "../interfaces/interfaces"
+import { IFrameProps, IChartData, ITopWord, IChartProps } from "../interfaces/interfaces"
 
-const Chart = (({ twitterData, topTwentyWords, handleHover, handleCycleOn }) => {
+const Chart = (({ twitterData, topTwentyWords, handleHover, handleCycleOn }: IChartProps) => {
   const [frameProps, setFrameProps] = useState<IFrameProps | undefined>(undefined)
   const [hoveredOn, setHoveredOn] = useState<ITopWord | undefined>()
   const [cycleTweet, setCycleTweet] = useState<number>(0)
@@ -17,7 +17,7 @@ const Chart = (({ twitterData, topTwentyWords, handleHover, handleCycleOn }) => 
       let b: number = 255
       // max r is 255; each "step" between 0 and 255 is 12.75 points for 20 steps
       // max g is 255; each "step" between 209 and 255 is 2.3 points for 20 steps
-      let data: Array<IChartData> = topTwentyWords.map((word: ITopTwentyWords, index: number) => {
+      let data: Array<IChartData> = topTwentyWords.map((word: ITopWord, index: number) => {
         r += 12
         g += 2
         return {

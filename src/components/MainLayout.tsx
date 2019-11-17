@@ -4,7 +4,7 @@ import Chart from "./Chart"
 import CurrentTweet from "./CurrentTweet"
 import TopWord from "./TopWord"
 import stopwords from "../stopwords"
-import { ITopTwentyWords, ITweets, ITopWord } from "../interfaces/interfaces"
+import { ITweets, ITopWord, IMainLayoutProps } from "../interfaces/interfaces"
 
 const Grid = styled.div`
   display: grid;
@@ -64,12 +64,12 @@ const GridTweetsContainer = styled.div`
   }
 `
 
-const MainLayout = ({ twitterData }) => {
-  const [topTwentyWords, setTopTwentyWords] = useState<Array<ITopTwentyWords>>([])
+const MainLayout = ({ twitterData }: IMainLayoutProps) => {
+  const [topTwentyWords, setTopTwentyWords] = useState<Array<ITopWord>>([])
   const [topWord, setTopWord] = useState<ITopWord | undefined>(undefined)
   const [freezeCycle, setFreezeCycle] = useState<boolean>(false)
 
-  const sort = (a: ITopTwentyWords, b: ITopTwentyWords) => {
+  const sort = (a: ITopWord, b: ITopWord) => {
     if(a.count < b.count) return 1
     else if(a.count > b.count) return -1
     else return 0
