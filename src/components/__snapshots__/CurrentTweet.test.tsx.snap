@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders as expected 1`] = `
+<DocumentFragment>
+  .c3 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: 0;
+  border-radius: 1.6rem;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+}
+
+.c0 {
+  border-radius: 9999px;
+  display: inline-block;
+}
+
+.c1 {
+  border-radius: 9999px;
+  display: block;
+}
+
+.c2 {
+  white-space: nowrap;
+}
+
+<div>
+    <div
+      class="c0"
+    >
+      <img
+        alt=""
+        class="c1"
+        data-testid="tweet-img"
+        src="https://pbs.twimg.com/profile_images/823638186429558787/D8CBNuC3_normal.jpg"
+      />
+    </div>
+    <p
+      class=""
+      data-testid="tweet-meta"
+    >
+      spiercy82 @Sean Piercy 
+      <span
+        class="c2"
+      >
+        · 19 hours ago
+      </span>
+    </p>
+    <p
+      class=""
+      data-testid="tweet-text"
+    >
+      RT @clark_robotics: Adobe has slashed the price of Photoshop in its early Black Friday sale: #ai #ml #dl #iot Cc: @MIKEQUINDAZZI https://t.…
+    </p>
+    <button
+      class="c3"
+    >
+      Another Tweet
+      <svg
+        fill="none"
+        style="width: 14px; height: 14px; margin-left: 5px;"
+        viewBox="0 0 12 12"
+      >
+        <path
+          d="M6 0.666664L5.06 1.60666L8.78 5.33333H0.666668V6.66666H8.78L5.06 10.3933L6 11.3333L11.3333 6L6 0.666664Z"
+          fill="white"
+        />
+      </svg>
+    </button>
+  </div>
+</DocumentFragment>
+`;

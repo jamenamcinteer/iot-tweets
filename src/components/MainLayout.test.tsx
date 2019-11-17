@@ -7,6 +7,10 @@ import MainLayout from './MainLayout';
 afterEach(cleanup);
 
 it('renders as expected', () => {
+  const realDateNow = Date.now.bind(global.Date);
+  const dateNowStub = jest.fn(() => 1574012671025);
+  global.Date.now = dateNowStub;
+
   const mockMath = Object.create(global.Math);
   mockMath.random = () => 0.01;
   global.Math = mockMath;
@@ -20,6 +24,8 @@ it('renders as expected', () => {
     expect(getByTestId("top-word").textContent).toEqual("ai")
     expect(getByTestId("top-wordcount").textContent).toEqual("used 34 times")
   }, 3000)
+
+  global.Date.now = realDateNow;
 })
 
 // These don't work because the visualization layer in the chart is separate from the interaction layer and the interaction layer doesn't have text to select
