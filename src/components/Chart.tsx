@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react"
 import OrdinalFrame from "semiotic/lib/OrdinalFrame"
 import { scaleSqrt } from "d3-scale"
-import { IFrameProps, ITopTwentyWords, IChartData } from "../interfaces/interfaces"
+import { IFrameProps, ITopTwentyWords, IChartData, ITopWord } from "../interfaces/interfaces"
 
 const Chart = (({ twitterData, topTwentyWords, handleHover, handleCycleOn }) => {
   const [frameProps, setFrameProps] = useState<IFrameProps | undefined>(undefined)
-  const [hoveredOn, setHoveredOn] = useState()
-  const [cycleTweet, setCycleTweet] = useState(0)
-  const [cycleOn, setCycleOn] = useState(topTwentyWords[0])
-  const [windowWidth] = useState(window.innerWidth)
+  const [hoveredOn, setHoveredOn] = useState<ITopWord | undefined>()
+  const [cycleTweet, setCycleTweet] = useState<number>(0)
+  const [cycleOn, setCycleOn] = useState<ITopWord>(topTwentyWords[0])
+  const [windowWidth] = useState<number>(window.innerWidth)
 
   useEffect(() => {
     if(twitterData.length > 0) {
@@ -38,7 +38,7 @@ const Chart = (({ twitterData, topTwentyWords, handleHover, handleCycleOn }) => 
         rAccessor: "count",
         rScaleType: scaleSqrt(),
         // axes: true,
-        style: d=> ({ fill: d.color, fillOpacity: d.fillOpacity }),
+        style: d => ({ fill: d.color, fillOpacity: d.fillOpacity }),
         oPadding: 10,
         pieceHoverAnnotation: true,
         tooltipContent: () => {
@@ -58,7 +58,7 @@ const Chart = (({ twitterData, topTwentyWords, handleHover, handleCycleOn }) => 
   useEffect(() => {
     let index: number | undefined;
     if(frameProps && frameProps.data && hoveredOn) {
-      for(let i=0;i<frameProps.data.length;i++) {
+      for(let i: number=0;i<frameProps.data.length;i++) {
         if(frameProps.data[i].word === hoveredOn.word) {
           index = i
         }
@@ -88,8 +88,8 @@ const Chart = (({ twitterData, topTwentyWords, handleHover, handleCycleOn }) => 
   }, [cycleTweet, topTwentyWords])
 
   useEffect(() => {
-    let timerCount = 0;
-    const timer = setInterval(() => {
+    let timerCount: number = 0;
+    const timer: NodeJS.Timeout = setInterval(() => {
       timerCount++;
       setCycleTweet(timerCount)
       if(timerCount >= 20) clearInterval(timer)

@@ -65,16 +65,16 @@ const GridTweetsContainer = styled.div`
 `
 
 const MainLayout = () => {
-  const [twitterData, setTwitterData] = useState([])
+  const [twitterData, setTwitterData] = useState<Array<ITweets> | []>([])
   const [topTwentyWords, setTopTwentyWords] = useState<Array<ITopTwentyWords>>([])
   const [topWord, setTopWord] = useState<ITopWord | undefined>(undefined)
-  const [freezeCycle, setFreezeCycle] = useState(false)
+  const [freezeCycle, setFreezeCycle] = useState<boolean>(false)
 
   useEffect(() => {
-    async function fetchData() {
+    async function fetchData(): Promise<void> {
       try {
-        const response = await fetch('/tweets');
-        const json = await response.json();
+        const response: Response = await fetch('/tweets');
+        const json: Array<ITweets> = await response.json();
         // BUG: sometimes we don't get the full 100, but rather something in the 90's
         setTwitterData(json)
         // localStorage.setItem("twitterData", JSON.stringify(json))
@@ -89,7 +89,7 @@ const MainLayout = () => {
     // }
   }, [])
 
-  const sort = (a, b) => {
+  const sort = (a: ITopTwentyWords, b: ITopTwentyWords) => {
     if(a.count < b.count) return 1
     else if(a.count > b.count) return -1
     else return 0
@@ -101,11 +101,11 @@ const MainLayout = () => {
       let allWords = []
       let wordCounts = {}
   
-      twitterData.map((tweet: ITweets) => {
-        // remove urls and @'s
+      twitterData.forEach((tweet: ITweets) => {
+        // remove urls
         let words: string | Array<string> = tweet.text.replace(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)/g, "")
+        // remove @'s
         words = words.replace(/(^|)@\w+/g, "")
-  
         // split tweet into words
         words = tweet.text.split(/\b/);
   
@@ -135,18 +135,18 @@ const MainLayout = () => {
     if(twitterData.length > 0 && topTwentyWords.length === 0) getTopTwentyWords()
   }, [twitterData, topTwentyWords])
 
-  const handleChartHover = (newTopWord) => {
+  const handleChartHover = (newTopWord: ITopWord) => {
     if(!topWord) setTopWord(newTopWord)
     if(topWord && newTopWord && topWord.word !== newTopWord.word) setTopWord(newTopWord)
     if(newTopWord) setFreezeCycle(true)
   }
 
-  const handleCycleChange = (newTopWord) => {
+  const handleCycleChange = (newTopWord: ITopWord) => {
     if(!freezeCycle) setTopWord(newTopWord)
   }
 
   useEffect(() => {
-    const selectAll = document.querySelectorAll(`.pieces > g > path`)
+    const selectAll: NodeListOf<Element> = document.querySelectorAll(`.pieces > g > path`)
     if(topWord && selectAll.length > 0) {
       const selectThis: any = document.querySelector(`.pieces > g:nth-child(${topWord.index + 1}) > path`)
       if(selectThis) {

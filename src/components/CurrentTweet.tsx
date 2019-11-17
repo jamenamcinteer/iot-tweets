@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import moment from "moment"
 import styled from "styled-components"
 import NextTweetButton from "./NextTweetButton"
-import { IPropsTheme } from "../interfaces/interfaces"
+import { IPropsTheme, ITweets } from "../interfaces/interfaces"
 
 const TweetUserProfileImageContainer = styled.div`
   border-radius: 9999px;
@@ -38,10 +38,10 @@ const TweetText = styled.p`
 `
 
 const CurrentTweet = ({ twitterData }) => {
-  const [currentTweet, setCurrentTweet] = useState()
+  const [currentTweet, setCurrentTweet] = useState<ITweets | undefined>()
 
   useEffect(() => {
-    const newIndex = Math.floor(Math.random() * twitterData.length)
+    const newIndex: number = Math.floor(Math.random() * twitterData.length)
     setCurrentTweet(twitterData[newIndex])
     // setInterval(() => {
     //   const newIndex = Math.floor(Math.random(0, 1) * twitterData.length)
@@ -50,7 +50,7 @@ const CurrentTweet = ({ twitterData }) => {
   }, [twitterData])
 
   const nextClickHandler = () => {
-    const newIndex = Math.floor(Math.random() * twitterData.length)
+    const newIndex: number = Math.floor(Math.random() * twitterData.length)
     setCurrentTweet(twitterData[newIndex])
   }
 
