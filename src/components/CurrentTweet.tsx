@@ -10,10 +10,6 @@ const CurrentTweet = ({ twitterData }: ICurrentTweetProps) => {
   useEffect(() => {
     const newIndex: number = Math.floor(Math.random() * twitterData.length)
     setCurrentTweet(twitterData[newIndex])
-    // setInterval(() => {
-    //   const newIndex = Math.floor(Math.random(0, 1) * twitterData.length)
-    //   setCurrentTweet(twitterData[newIndex])
-    // }, 15000)
   }, [twitterData])
 
   const nextClickHandler = () => {
