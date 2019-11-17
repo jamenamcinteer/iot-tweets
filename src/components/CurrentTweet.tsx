@@ -9,17 +9,14 @@ const CurrentTweet = ({ twitterData }: ICurrentTweetProps) => {
 
   // Select a random tweet to display when the component gets the twitter data
   useEffect(() => {
-    setCurrentTweet(getRandomTweet())
+    const newIndex: number = Math.floor(Math.random() * twitterData.length)
+    setCurrentTweet(twitterData[newIndex])
   }, [twitterData])
 
   // Change the current tweet to another random tweet when the Another Tweet button is clicked
   const nextClickHandler = () => {
-    setCurrentTweet(getRandomTweet())
-  }
-
-  const getRandomTweet: () => ITweets = () => {
     const newIndex: number = Math.floor(Math.random() * twitterData.length)
-    return twitterData[newIndex]
+    setCurrentTweet(twitterData[newIndex])
   }
 
   return (
