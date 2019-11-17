@@ -38,11 +38,11 @@
     "coverage": "react-scripts test --watchAll=false --coverage",
     "eject": "react-scripts eject",
     "server-watch": "nodemon --watch server --exec yarn server-start",
-    "server-start": "yarn server",
+    "server-start": "yarn server-build && server",
     "server": "node server/index.js",
     "dev": "concurrently \"yarn server-watch\" \"yarn client-start\"",
-    "build": "yarn server && yarn client-build",
-    "heroku-postbuild": "yarn server && yarn client-build"
+    "start": "yarn run server",
+    "heroku-postbuild": "yarn client-build"
   },
   "proxy": "http://localhost:3001",
   "eslintConfig": {
