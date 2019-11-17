@@ -229,7 +229,7 @@ exports[`renders as expected 1`] = `
                         class=""
                         d="M-106.78909763936157,-169.10378063594825A200,200,0,0,1,-96.05792301320048,-175.42199242509488L-86.81474506162255,-158.54200333369337A180.75499102701247,180.75499102701247,0,0,0,-96.5133119279278,-152.83176175742355Z"
                         role="img"
-                        style="fill: rgb(192, 241, 255); fill-opacity: 1;"
+                        style="fill: rgb(192, 241, 255); fill-opacity: 0.4;"
                         tabindex="-1"
                         transform="translate(150,150)"
                       />
@@ -243,7 +243,7 @@ exports[`renders as expected 1`] = `
                         class=""
                         d="M20.905692653530693,-198.90437907365467A200,200,0,0,1,180.64417033918954,-85.83521260220581L135.48312775439214,-64.37640945165435A150,150,0,0,0,15.679269490148018,-149.178284305241Z"
                         role="img"
-                        style="fill: rgb(0, 209, 255); fill-opacity: 0.4;"
+                        style="fill: rgb(0, 209, 255); fill-opacity: 1;"
                         tabindex="-1"
                         transform="translate(150,150)"
                       />
@@ -754,20 +754,18 @@ exports[`renders as expected 1`] = `
         <div
           class="c3"
         >
-          <div>
-            <p
-              class="c4"
-              data-testid="top-word"
-            >
-              iot
-            </p>
-            <p
-              class="c5"
-              data-testid="top-wordcount"
-            >
-              used 54 times
-            </p>
-          </div>
+          <p
+            class="c4"
+            data-testid="top-word"
+          >
+            iot
+          </p>
+          <p
+            class="c5"
+            data-testid="top-wordcount"
+          >
+            used 54 times
+          </p>
         </div>
       </div>
     </div>

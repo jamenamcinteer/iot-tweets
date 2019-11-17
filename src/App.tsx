@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { ThemeProvider } from "styled-components";
-import MainLayout from "./components/MainLayout";
+import React, { useState, useEffect } from 'react'
+import { ThemeProvider } from "styled-components"
+import MainLayout from "./components/MainLayout"
 import theme from "./theme"
 import { ITweets } from "./interfaces/interfaces"
 import { GlobalStyles } from "./styles/GlobalStyles"
@@ -10,18 +10,18 @@ import { AppContainer, AppBody, AppHeader, AppHeaderText, AppHeaderSubtext } fro
 function App() {
   const [twitterData, setTwitterData] = useState<Array<ITweets> | []>([])
 
+  // Fetch the twitter data from our API
   useEffect(() => {
     async function fetchData(): Promise<void> {
       try {
-        const response: Response = await fetch('/tweets');
-        const json: Array<ITweets> = await response.json();
-        // BUG: sometimes we don't get the full 100, but rather something in the 90's
+        const response: Response = await fetch('/tweets')
+        const json: Array<ITweets> = await response.json()
         setTwitterData(json)
       } catch (error) {
         console.error(error) // TODO: handle this case gracefully
       }
     }
-    fetchData();
+    fetchData()
   }, [])
 
   return (
@@ -38,7 +38,7 @@ function App() {
       </AppContainer>
     </ThemeProvider>
     
-  );
+  )
 }
 
-export default App;
+export default App

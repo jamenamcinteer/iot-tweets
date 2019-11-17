@@ -38,20 +38,18 @@ exports[`renders as expected 1`] = `
 <div
     class="c0"
   >
-    <div>
-      <p
-        class="c1"
-        data-testid="top-word"
-      >
-        AI
-      </p>
-      <p
-        class="c2"
-        data-testid="top-wordcount"
-      >
-        used 50 times
-      </p>
-    </div>
+    <p
+      class="c1"
+      data-testid="top-word"
+    >
+      AI
+    </p>
+    <p
+      class="c2"
+      data-testid="top-wordcount"
+    >
+      used 50 times
+    </p>
   </div>
 </DocumentFragment>
 `;

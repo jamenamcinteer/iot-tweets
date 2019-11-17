@@ -19,7 +19,7 @@
     "noEmit": true,
     "jsx": "react",
     "noImplicitAny": false,
-    "strictNullChecks": false // TODO: remove this
+    //"strictNullChecks": false // TODO: remove this
   },
   "include": [
     "src"
