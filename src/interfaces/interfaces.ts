@@ -50,6 +50,7 @@ export interface IPropsTheme {
 export interface ITheme {
   pageBackgroundColor: string,
   baseFontColor: string,
+  baseFontFamily: string,
   fontSizeSmall: string,
   fontSizeMedium: string,
   fontSizeLarge: string,

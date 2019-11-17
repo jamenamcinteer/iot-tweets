@@ -1,6 +1,7 @@
 const theme = {
   pageBackgroundColor: "#0A111C",
   baseFontColor: "#FFFFFF",
+  baseFontFamily: "'Open Sans', sans-serif",
   fontSizeSmall: "1rem",
   fontSizeMedium: "1.3rem",
   fontSizeLarge: "1.8rem",

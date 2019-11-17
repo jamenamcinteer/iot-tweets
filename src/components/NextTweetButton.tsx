@@ -12,6 +12,7 @@ const Button = styled.button`
   color: ${(props: IPropsTheme) => props.theme.baseFontColor};
   cursor: pointer;
   font-size: ${(props: IPropsTheme) => props.theme.fontSizeSmall};
+  font-family: ${(props: IPropsTheme) => props.theme.baseFontFamily};
 
   &:hover, &:focus {
     box-shadow: ${(props: IPropsTheme) => props.theme.boxShadowSecondary};
