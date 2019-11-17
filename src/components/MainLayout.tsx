@@ -47,17 +47,17 @@ const MainLayout = () => {
         const response = await fetch('/tweets');
         const json = await response.json();
         // BUG: sometimes we don't get the full 100, but rather something in the 90's
-        console.log(json)
         setTwitterData(json)
-        localStorage.setItem("twitterData", JSON.stringify(json))
+        // localStorage.setItem("twitterData", JSON.stringify(json))
       } catch (error) {
-        console.log(error)
+        console.error(error) // TODO: handle this case gracefully
       }
     }
-    if(!localStorage.getItem("twitterData")) fetchData();
-    else {
-      setTwitterData(JSON.parse(localStorage.getItem("twitterData") || '{}'))
-    }
+    fetchData();
+    // if(!localStorage.getItem("twitterData")) fetchData();
+    // else {
+    //   setTwitterData(JSON.parse(localStorage.getItem("twitterData") || '{}'))
+    // }
   }, [])
 
   const sort = (a, b) => {
@@ -95,8 +95,6 @@ const MainLayout = () => {
         })
         return false;
       })
-      console.log(allWords)
-      console.log(wordCounts)
       for (let word of allWords) {
           topTwenty.push({ word: word, count: wordCounts["_" + word] })
       }
@@ -105,7 +103,7 @@ const MainLayout = () => {
       setTopTwentyWords(topTwenty)
       return topTwenty;
     }
-    if(twitterData.length > 0 && topTwentyWords.length === 0) console.log(getTopTwentyWords())
+    if(twitterData.length > 0 && topTwentyWords.length === 0) getTopTwentyWords()
   }, [twitterData, topTwentyWords])
 
   const handleChartHover = (newTopWord) => {

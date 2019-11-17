@@ -32,8 +32,8 @@ const TopWord = ({ topWord }) => {
     <Container>
       {topWord && topWord.word && (
         <div>
-          <Word>{topWord.word}</Word>
-          <Count>used {topWord.count} times</Count>
+          <Word data-testid="top-word">{topWord.word}</Word>
+          <Count data-testid="top-wordcount">used {topWord.count} times</Count>
         </div>
       )}
     </Container>

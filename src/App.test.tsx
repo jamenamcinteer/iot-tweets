@@ -1,9 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { cleanup, render } from "@testing-library/react";
+import "jest-styled-components";
 import App from './App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+afterEach(cleanup);
+
+it('renders without crashing', async () => {
+  const {} = render(<App />)
+})
