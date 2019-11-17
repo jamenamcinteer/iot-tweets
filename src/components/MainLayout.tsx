@@ -64,30 +64,10 @@ const GridTweetsContainer = styled.div`
   }
 `
 
-const MainLayout = () => {
-  const [twitterData, setTwitterData] = useState<Array<ITweets> | []>([])
+const MainLayout = ({ twitterData }) => {
   const [topTwentyWords, setTopTwentyWords] = useState<Array<ITopTwentyWords>>([])
   const [topWord, setTopWord] = useState<ITopWord | undefined>(undefined)
   const [freezeCycle, setFreezeCycle] = useState<boolean>(false)
-
-  useEffect(() => {
-    async function fetchData(): Promise<void> {
-      try {
-        const response: Response = await fetch('/tweets');
-        const json: Array<ITweets> = await response.json();
-        // BUG: sometimes we don't get the full 100, but rather something in the 90's
-        setTwitterData(json)
-        // localStorage.setItem("twitterData", JSON.stringify(json))
-      } catch (error) {
-        console.error(error) // TODO: handle this case gracefully
-      }
-    }
-    fetchData();
-    // if(!localStorage.getItem("twitterData")) fetchData();
-    // else {
-    //   setTwitterData(JSON.parse(localStorage.getItem("twitterData") || '{}'))
-    // }
-  }, [])
 
   const sort = (a: ITopTwentyWords, b: ITopTwentyWords) => {
     if(a.count < b.count) return 1

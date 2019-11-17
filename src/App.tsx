@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 import MainLayout from "./components/MainLayout";
 import theme from "./theme"
-import { IPropsTheme } from "./interfaces/interfaces"
+import { IPropsTheme, ITweets } from "./interfaces/interfaces"
 
 const GlobalStyles = createGlobalStyle`
   body, html {
@@ -55,6 +55,22 @@ const AppHeaderSubtext = styled.h2`
 `
 
 function App() {
+  const [twitterData, setTwitterData] = useState<Array<ITweets> | []>([])
+
+  useEffect(() => {
+    async function fetchData(): Promise<void> {
+      try {
+        const response: Response = await fetch('/tweets');
+        const json: Array<ITweets> = await response.json();
+        // BUG: sometimes we don't get the full 100, but rather something in the 90's
+        setTwitterData(json)
+      } catch (error) {
+        console.error(error) // TODO: handle this case gracefully
+      }
+    }
+    fetchData();
+  }, [])
+
   return (
     <ThemeProvider theme={theme}>
       <AppContainer>
@@ -64,7 +80,7 @@ function App() {
           <AppHeaderSubtext>Top 20 Words in 100 Recent Tweets</AppHeaderSubtext>
         </AppHeader>
         <AppBody>
-          <MainLayout />
+          <MainLayout twitterData={twitterData} />
         </AppBody>
       </AppContainer>
     </ThemeProvider>
