@@ -61,7 +61,7 @@ const CurrentTweet = ({ twitterData }) => {
         <TweetUserProfileImageContainer>
           <TweetUserProfileImage src={currentTweet.user_profile_image_url_https} alt="" data-testid="tweet-img" />
         </TweetUserProfileImageContainer>
-        <TweetMeta data-testid="tweet-meta">{currentTweet.user_screen_name} @{currentTweet.user_name} <TweetDate>· {moment(currentTweet.created_at, "EEE MMM dd HH:mm:ss Z yyyy").fromNow()}</TweetDate></TweetMeta>
+        <TweetMeta data-testid="tweet-meta">{currentTweet.user_screen_name} @{currentTweet.user_name} <TweetDate>· {moment(currentTweet.created_at, "ddd MMM D HH:mm:ss ZZ yyyy").fromNow()}</TweetDate></TweetMeta>
         <TweetText data-testid="tweet-text" dangerouslySetInnerHTML={currentTweet}></TweetText>
         <NextTweetButton clickHandler={nextClickHandler} />
       </div>
