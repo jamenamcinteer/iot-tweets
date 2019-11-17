@@ -1,68 +1,10 @@
 import React, { useEffect, useState } from "react"
-import styled from "styled-components";
 import Chart from "./Chart"
 import CurrentTweet from "./CurrentTweet"
 import TopWord from "./TopWord"
 import stopwords from "../stopwords"
 import { ITweets, ITopWord, IMainLayoutProps } from "../interfaces/interfaces"
-
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 3rem 9rem;
-  width: 100%;
-
-  @media (min-width: 80rem) {
-    grid-template-columns: 1fr 1fr;
-  }
-  @media (min-width: 90rem) {
-    grid-template-columns: 1fr 400px 25rem 1fr;
-  }
-`
-
-const GridChart = styled.div`
-  @media (min-width: 90rem) {
-    grid-column: 2;
-  }
-`
-
-const GridChartFrame = styled.div`
-  position: relative;
-  margin: 0 auto;
-
-  @media (min-width: 28rem) {
-    width: 400px;
-  }
-  @media (min-width: 80rem) {
-    float: right;
-    margin: 0;
-  }
-  @media (min-width: 90rem) {
-    float: none;
-    margin: 0 auto;
-  }
-`
-
-const GridTweets = styled.div`
-  @media (min-width: 90rem) {
-    grid-column: 3;
-  }
-`
-
-const GridTweetsContainer = styled.div`
-  max-width: 25rem;
-  display: flex;
-  align-items: center;
-  height: 100%;
-  margin: 0 auto;
-
-  @media (min-width: 80rem) {
-    margin: 0;
-  }
-  @media (min-width: 90rem) {
-    margin: 0 auto;
-  }
-`
+import { Grid, GridChart, GridChartFrame, GridTweets, GridTweetsContainer } from "../styles/MainLayout"
 
 const MainLayout = ({ twitterData }: IMainLayoutProps) => {
   const [topTwentyWords, setTopTwentyWords] = useState<Array<ITopWord>>([])
