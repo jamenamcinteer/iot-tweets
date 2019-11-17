@@ -3,8 +3,8 @@ import { ThemeProvider } from "styled-components";
 import MainLayout from "./components/MainLayout";
 import theme from "./theme"
 import { ITweets } from "./interfaces/interfaces"
-import { GlobalStyles } from "./styled-components/GlobalStyles"
-import { AppContainer, AppBody, AppHeader, AppHeaderText, AppHeaderSubtext } from "./styled-components/App"
+import { GlobalStyles } from "./styles/GlobalStyles"
+import { AppContainer, AppBody, AppHeader, AppHeaderText, AppHeaderSubtext } from "./styles/App"
 
 
 function App() {
