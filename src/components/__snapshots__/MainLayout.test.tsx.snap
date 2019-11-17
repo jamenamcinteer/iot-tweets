@@ -754,18 +754,20 @@ exports[`renders as expected 1`] = `
         <div
           class="c3"
         >
-          <p
-            class="c4"
-            data-testid="top-word"
-          >
-            iot
-          </p>
-          <p
-            class="c5"
-            data-testid="top-wordcount"
-          >
-            used 54 times
-          </p>
+          <div>
+            <p
+              class="c4"
+              data-testid="top-word"
+            >
+              iot
+            </p>
+            <p
+              class="c5"
+              data-testid="top-wordcount"
+            >
+              used 54 times
+            </p>
+          </div>
         </div>
       </div>
     </div>
