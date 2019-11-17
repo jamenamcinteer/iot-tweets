@@ -54,7 +54,6 @@ const CurrentTweet = ({ twitterData }) => {
     setCurrentTweet(twitterData[newIndex])
   }
 
-  // BUG: moment returns a warning regarding the date format that Twitter provides us
   return (
     <>
     {currentTweet && (
@@ -62,7 +61,7 @@ const CurrentTweet = ({ twitterData }) => {
         <TweetUserProfileImageContainer>
           <TweetUserProfileImage src={currentTweet.user_profile_image_url_https} alt="" data-testid="tweet-img" />
         </TweetUserProfileImageContainer>
-        <TweetMeta data-testid="tweet-meta">{currentTweet.user_screen_name} @{currentTweet.user_name} <TweetDate>· {moment(currentTweet.created_at).fromNow()}</TweetDate></TweetMeta>
+        <TweetMeta data-testid="tweet-meta">{currentTweet.user_screen_name} @{currentTweet.user_name} <TweetDate>· {moment(currentTweet.created_at, "EEE MMM dd HH:mm:ss Z yyyy").fromNow()}</TweetDate></TweetMeta>
         <TweetText data-testid="tweet-text" dangerouslySetInnerHTML={currentTweet}></TweetText>
         <NextTweetButton clickHandler={nextClickHandler} />
       </div>
