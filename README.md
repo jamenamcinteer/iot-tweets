@@ -1,68 +1,54 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Demo: [https://iot-tweets.herokuapp.com/](https://iot-tweets.herokuapp.com/)
+
+This project is a React app built with [Create React App](https://github.com/facebook/create-react-app) and a Node.js/Express server.
+
+The Node.js/Express server gets 100 recent tweets with the hashtag #IoT using the Twitter Search API and makes them available to the React app at an API endpoint `/tweets`. The React app displays the 100 recent tweets along with a data visualization of the top twenty words used in those tweets.
+
+## Setting Up a Local Copy
+
+1. Clone the repo
+
+```
+git clone git@github.com:jamenamcinteer/iot-tweets.git
+cd iot-tweets
+```
+
+2. Run `yarn` in the root `iot-tweets` folder
+
+3. Create a file `dev.js` in the `config` folder with your Twitter API variables. It should be in the following format, where `[variable]` is your Twitter API variable:
+
+```
+module.exports = {
+  TWITTER_API_KEY: [twitter api key],
+  TWITTER_API_SECRET: [twitter api secret],
+  TWITTER_ACCESS_TOKEN_KEY: [twitter access token key],
+  TWITTER_ACCESS_TOKEN_SECRET: [twitter access token secret],
+  CORS_URL: "http://localhost:3001/"
+};
+```
+
+4. Run `yarn dev` to run the app in development mode. The React app will be at `http://localhost:3000` and the Node server will be at `http://localhost:3001`
+
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `yarn start`
+### `yarn dev`
 
 Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Open [http://localhost:3000](http://localhost:3000) to view the React app in the browser and [http://localhost:3001/tweets](http://localhost:3001/tweets) to view the Node server endpoint for accessing tweets.
 
 ### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the Jest test runner in watch mode.
 
-### `yarn build`
+### `yarn coverage`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Runs the Jest test runner once (not in watch mode) and displays a table with the project test coverage.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### `yarn client-build`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Builds the React app for production to the `build` folder.
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+`yarn heroku-postbuild` uses this script. Heroku uses `yarn heroku-postbuild` to build the React app during deployment. It then uses `yarn start` to start the server after the React build is complete.
