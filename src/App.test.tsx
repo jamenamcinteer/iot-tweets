@@ -7,7 +7,7 @@ import App from './App';
 afterEach(cleanup);
 
 it('renders without crashing', async () => {
-  const {} = render(<App />)
+  render(<App />)
 })
 
 it('calls the API when rendered', async () => {
@@ -17,7 +17,7 @@ it('calls the API when rendered', async () => {
   });
   jest.spyOn(global, "fetch").mockImplementation(() => mockFetchPromise);
 
-  const {} = render(<App />)
+  render(<App />)
   await wait(() => expect(global.fetch).toHaveBeenCalledTimes(1))
 })
 
@@ -27,7 +27,7 @@ it('handles an error from the API call', async () => {
   });
   jest.spyOn(global, "fetch").mockImplementation(() => mockFetchPromise);
 
-  const { } = render(<App />)
+  render(<App />)
   
   await wait(() => expect(global.fetch).toHaveBeenCalledTimes(2))
 })
