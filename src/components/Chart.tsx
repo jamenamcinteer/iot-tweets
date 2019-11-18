@@ -8,7 +8,7 @@ function Chart({ twitterData, topTwentyWords, handleHover, handleCycleOn }: ICha
   const [hoveredOn, setHoveredOn] = useState<ITopWord | undefined>()
   const [cycleOn, setCycleOn] = useState<ITopWord>(topTwentyWords[0])
   const [cycleWord, setCycleWord] = useState<number>(0)
-  const [windowWidth] = useState<number>(window.innerWidth)
+  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth)
 
   // Set up the frameProps for the chart
   useEffect(() => {
@@ -112,6 +112,11 @@ function Chart({ twitterData, topTwentyWords, handleHover, handleCycleOn }: ICha
     }, 1000)
     return () => clearInterval(timer)
   }, [])
+
+  // Whenever the window is resized (example: switching landscape orientation to portrait in mobile), change the windowWidth local state so our chart re-renders
+  window.addEventListener('resize', () => {
+    setWindowWidth(window.innerWidth)
+  })
 
   return (
     <OrdinalFrame {...frameProps} />
