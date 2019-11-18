@@ -1,19 +1,19 @@
-import React from 'react';
-import { cleanup, render } from "@testing-library/react";
-import "jest-styled-components";
+import React from 'react'
+import { cleanup, render } from "@testing-library/react"
+import "jest-styled-components"
 import { mockSuccessResponseTwitter } from "../__mocks__/mockTwitterApiResponse"
-import MainLayout from './MainLayout';
+import MainLayout from './MainLayout'
 
-afterEach(cleanup);
+afterEach(cleanup)
 
 it('renders as expected', () => {
-  const realDateNow = Date.now.bind(global.Date);
-  const dateNowStub = jest.fn(() => 1574012671025);
-  global.Date.now = dateNowStub;
+  const realDateNow = Date.now.bind(global.Date)
+  const dateNowStub = jest.fn(() => 1574012671025)
+  global.Date.now = dateNowStub
 
-  const mockMath = Object.create(global.Math);
-  mockMath.random = () => 0.01;
-  global.Math = mockMath;
+  const mockMath = Object.create(global.Math)
+  mockMath.random = () => 0.01
+  global.Math = mockMath
 
   const { asFragment, getByTestId } = render(<MainLayout twitterData={mockSuccessResponseTwitter} />)
   expect(asFragment()).toMatchSnapshot()
@@ -25,7 +25,7 @@ it('renders as expected', () => {
     expect(getByTestId("top-wordcount").textContent).toEqual("used 34 times")
   }, 1000)
 
-  global.Date.now = realDateNow;
+  global.Date.now = realDateNow
 })
 
 // These don't work because the visualization layer in the chart is separate from the interaction layer and the interaction layer doesn't have text to select

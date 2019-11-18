@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react"
 import Chart from "./Chart"
 import CurrentTweet from "./CurrentTweet"
+import AllTweets from "./AllTweets"
 import TopWord from "./TopWord"
 import stopwords from "../stopwords"
 import { ITweets, ITopWord, IMainLayoutProps } from "../interfaces/interfaces"
 import { Grid, GridChart, GridChartFrame, GridTweets, GridTweetsContainer } from "../styles/MainLayout"
 
-const MainLayout = ({ twitterData }: IMainLayoutProps) => {
+function MainLayout({ twitterData }: IMainLayoutProps) {
   const [topTwentyWords, setTopTwentyWords] = useState<Array<ITopWord>>([])
   const [topWord, setTopWord] = useState<ITopWord | undefined>(undefined)
   const [freezeCycle, setFreezeCycle] = useState<boolean>(false)
@@ -101,19 +102,23 @@ const MainLayout = ({ twitterData }: IMainLayoutProps) => {
   }
 
   return (
-    <Grid>
-      <GridChart>
-        <GridChartFrame>
-          <Chart twitterData={twitterData} topTwentyWords={topTwentyWords} handleHover={handleChartHover} handleCycleOn={handleCycleChange} />
-          {topWord && <TopWord topWord={topWord} />}
-        </GridChartFrame>
-      </GridChart>
-      <GridTweets>
-        <GridTweetsContainer>
-          <CurrentTweet twitterData={twitterData} />
-        </GridTweetsContainer>
-      </GridTweets>
-    </Grid>)
+    <>
+      <Grid>
+        <GridChart>
+          <GridChartFrame>
+            <Chart twitterData={twitterData} topTwentyWords={topTwentyWords} handleHover={handleChartHover} handleCycleOn={handleCycleChange} />
+            {topWord && <TopWord topWord={topWord} />}
+          </GridChartFrame>
+        </GridChart>
+        <GridTweets>
+          <GridTweetsContainer>
+            <CurrentTweet twitterData={twitterData} />
+          </GridTweetsContainer>
+        </GridTweets>
+      </Grid>
+      <AllTweets twitterData={twitterData} />
+    </>
+    )
 }
 
 export default MainLayout
