@@ -1368,6 +1368,12 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-lazyload@^2.6.0":
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/@types/react-lazyload/-/react-lazyload-2.6.0.tgz#41cd9cbb2c03dd810377518d4837794469a521d1"
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-native@*":
   version "0.60.22"
   resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.60.22.tgz#ba199a441cb0612514244ffb1d0fe6f04c878575"
