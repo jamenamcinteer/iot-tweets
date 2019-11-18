@@ -6,7 +6,7 @@ import stopwords from "../stopwords"
 import { ITweets, ITopWord, IMainLayoutProps } from "../interfaces/interfaces"
 import { Grid, GridChart, GridChartFrame, GridTweets, GridTweetsContainer } from "../styles/MainLayout"
 
-const MainLayout = ({ twitterData }: IMainLayoutProps) => {
+function MainLayout({ twitterData }: IMainLayoutProps) {
   const [topTwentyWords, setTopTwentyWords] = useState<Array<ITopWord>>([])
   const [topWord, setTopWord] = useState<ITopWord | undefined>(undefined)
   const [freezeCycle, setFreezeCycle] = useState<boolean>(false)

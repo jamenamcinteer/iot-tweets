@@ -2,7 +2,7 @@ import React from "react"
 import { INextTweetButtonProps } from "../interfaces/interfaces"
 import { Button } from "../styles/NextTweetButton"
 
-const NextTweetButton = ({ clickHandler }: INextTweetButtonProps) => {
+function NextTweetButton({ clickHandler }: INextTweetButtonProps) {
   const onClick = (e: any) => {
     e.preventDefault()
     e.target.blur() // Remove focus from the button when it is clicked

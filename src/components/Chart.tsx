@@ -3,13 +3,14 @@ import OrdinalFrame from "semiotic/lib/OrdinalFrame"
 import { scaleSqrt } from "d3-scale"
 import { IFrameProps, IChartData, ITopWord, IChartProps } from "../interfaces/interfaces"
 
-const Chart = (({ twitterData, topTwentyWords, handleHover, handleCycleOn }: IChartProps) => {
+function Chart({ twitterData, topTwentyWords, handleHover, handleCycleOn }: IChartProps) {
   const [frameProps, setFrameProps] = useState<IFrameProps | undefined>(undefined)
   const [hoveredOn, setHoveredOn] = useState<ITopWord | undefined>()
   const [cycleOn, setCycleOn] = useState<ITopWord>(topTwentyWords[0])
   const [cycleWord, setCycleWord] = useState<number>(0)
   const [windowWidth] = useState<number>(window.innerWidth)
 
+  // Set up the frameProps for the chart
   useEffect(() => {
     if(twitterData.length > 0) {
       let r: number = -12
@@ -115,6 +116,6 @@ const Chart = (({ twitterData, topTwentyWords, handleHover, handleCycleOn }: ICh
   return (
     <OrdinalFrame {...frameProps} />
   )
-})
+}
 
 export default Chart

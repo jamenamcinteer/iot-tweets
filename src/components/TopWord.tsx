@@ -2,7 +2,7 @@ import React from "react"
 import { ITopWordProps } from "../interfaces/interfaces"
 import { Container, Word, Count } from "../styles/TopWord"
 
-const TopWord = ({ topWord }: ITopWordProps) => {
+function TopWord({ topWord }: ITopWordProps) {
   return (
     <Container>
       {topWord && topWord.word && (

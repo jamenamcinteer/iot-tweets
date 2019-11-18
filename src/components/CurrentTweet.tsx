@@ -4,7 +4,7 @@ import NextTweetButton from "./NextTweetButton"
 import { ITweets, ICurrentTweetProps } from "../interfaces/interfaces"
 import { TweetUserProfileImageContainer, TweetUserProfileImage, TweetDate, TweetMeta, TweetText } from "../styles/CurrentTweet"
 
-const CurrentTweet = ({ twitterData }: ICurrentTweetProps) => {
+function CurrentTweet({ twitterData }: ICurrentTweetProps) {
   const [currentTweet, setCurrentTweet] = useState<ITweets | undefined>()
 
   // Select a random tweet to display when the component gets the twitter data
