@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/jamenamcinteer/iot-tweets.svg?branch=master)](https://travis-ci.com/jamenamcinteer/iot-tweets)
+
 Demo: [https://iot-tweets.herokuapp.com/](https://iot-tweets.herokuapp.com/)
 
 This project is a React app built with [Create React App](https://github.com/facebook/create-react-app) and a Node.js/Express server.
