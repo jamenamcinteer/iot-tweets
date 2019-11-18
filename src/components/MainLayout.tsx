@@ -82,7 +82,7 @@ const MainLayout = ({ twitterData }: IMainLayoutProps) => {
   // When the top word changes, either by a hover or a cycle change, we change the opacity of all the chart "bars" to 0.4 and then change the opacity of the highlighted chart "bar" to 1
   useEffect(() => {
     const selectAll: NodeListOf<Element> = document.querySelectorAll(`.pieces > g > path`)
-    if(topWord && topWord.index && selectAll.length > 0) {
+    if(topWord && typeof topWord.index !== 'undefined' && selectAll.length > 0) {
       const selectThis: any = document.querySelector(`.pieces > g:nth-child(${topWord.index + 1}) > path`)
       if(selectThis) {
         // if(freezeCycle) {

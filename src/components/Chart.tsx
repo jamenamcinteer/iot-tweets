@@ -101,14 +101,14 @@ const Chart = (({ twitterData, topTwentyWords, handleHover, handleCycleOn }: ICh
     
   }, [cycleWord, topTwentyWords])
 
-  // When the component mounts, start a timer that changes the highlighted top word every 3 seconds
+  // When the component mounts, start a timer that changes the highlighted top word every 1 second
   useEffect(() => {
     let timerCount: number = 0
     const timer: any = setInterval(() => {
       timerCount++
       setCycleWord(timerCount)
-      if(timerCount >= 20) clearInterval(timer) // kill the timer after it has completed one cycle
-    }, 3000)
+      if(timerCount >= 19) timerCount = -1 // reset the cycle to the beginning
+    }, 1000)
     return () => clearInterval(timer)
   }, [])
 

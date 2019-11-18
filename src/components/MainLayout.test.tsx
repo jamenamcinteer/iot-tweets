@@ -23,7 +23,7 @@ it('renders as expected', () => {
   setTimeout(() => {
     expect(getByTestId("top-word").textContent).toEqual("ai")
     expect(getByTestId("top-wordcount").textContent).toEqual("used 34 times")
-  }, 3000)
+  }, 1000)
 
   global.Date.now = realDateNow;
 })
