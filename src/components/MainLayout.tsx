@@ -43,9 +43,7 @@ const MainLayout = ({ twitterData }: IMainLayoutProps) => {
             wordCounts["_" + word] = (wordCounts["_" + word] || 0) + 1
             if(allWords.indexOf(word) < 0) allWords.push(word)
           }
-          return false
         })
-        return false
       })
 
       // our allWords array is now populated, now we add each word with its count to the topTwenty array
