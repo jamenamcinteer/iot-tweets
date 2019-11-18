@@ -9,16 +9,23 @@ import { AppContainer, AppBody, AppHeader, AppHeaderText, AppHeaderSubtext } fro
 
 function App() {
   const [twitterData, setTwitterData] = useState<Array<ITweets> | []>([])
+  const [apiError, setApiError] = useState<boolean>(false)
 
   // Fetch the twitter data from our API
   useEffect(() => {
     async function fetchData(): Promise<void> {
       try {
         const response: Response = await fetch('/tweets')
-        const json: Array<ITweets> = await response.json()
-        setTwitterData(json)
+        if(response.status !== 200) {
+          setApiError(true)
+        }
+        else {
+          const json: Array<ITweets> = await response.json()
+          setTwitterData(json)
+        }
       } catch (error) {
-        console.error(error) // TODO: handle this case gracefully
+        console.error(error)
+        setApiError(true)
       }
     }
     fetchData()
@@ -33,7 +40,11 @@ function App() {
           <AppHeaderSubtext>Top 20 Words in 100 Recent Tweets</AppHeaderSubtext>
         </AppHeader>
         <AppBody>
-          <MainLayout twitterData={twitterData} />
+          {
+            !apiError
+            ? <MainLayout twitterData={twitterData} />
+            : <div>Sorry, there was an issue with fetching the Twitter data. Please try again later.</div>
+          }
         </AppBody>
       </AppContainer>
     </ThemeProvider>
