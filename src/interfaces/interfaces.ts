@@ -62,6 +62,10 @@ export interface ITheme {
 }
 
 // --- React Component Props -->
+export interface IAllTweetsProps {
+  twitterData: Array<ITweets>
+}
+
 export interface IChartProps {
   twitterData: Array<ITweets>,
   topTwentyWords: Array<ITopWord>,

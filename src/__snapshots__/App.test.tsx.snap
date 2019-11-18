@@ -16,6 +16,7 @@ exports[`handles an error from the API call 1`] = `
 .c1 {
   background-color: rgba(0,0,0,0.7);
   margin: 0;
+  padding: 0 2rem;
   padding-bottom: 4rem;
 }
 
@@ -29,6 +30,13 @@ exports[`handles an error from the API call 1`] = `
   font-size: 1.4rem;
   font-weight: normal;
   margin: 0;
+}
+
+@media (min-width:40rem) {
+  .c1 {
+    padding: 0;
+    padding-bottom: 4rem;
+  }
 }
 
 @media (min-width:80rem) {

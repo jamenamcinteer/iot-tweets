@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import Chart from "./Chart"
 import CurrentTweet from "./CurrentTweet"
+import AllTweets from "./AllTweets"
 import TopWord from "./TopWord"
 import stopwords from "../stopwords"
 import { ITweets, ITopWord, IMainLayoutProps } from "../interfaces/interfaces"
@@ -101,19 +102,23 @@ function MainLayout({ twitterData }: IMainLayoutProps) {
   }
 
   return (
-    <Grid>
-      <GridChart>
-        <GridChartFrame>
-          <Chart twitterData={twitterData} topTwentyWords={topTwentyWords} handleHover={handleChartHover} handleCycleOn={handleCycleChange} />
-          {topWord && <TopWord topWord={topWord} />}
-        </GridChartFrame>
-      </GridChart>
-      <GridTweets>
-        <GridTweetsContainer>
-          <CurrentTweet twitterData={twitterData} />
-        </GridTweetsContainer>
-      </GridTweets>
-    </Grid>)
+    <>
+      <Grid>
+        <GridChart>
+          <GridChartFrame>
+            <Chart twitterData={twitterData} topTwentyWords={topTwentyWords} handleHover={handleChartHover} handleCycleOn={handleCycleChange} />
+            {topWord && <TopWord topWord={topWord} />}
+          </GridChartFrame>
+        </GridChart>
+        <GridTweets>
+          <GridTweetsContainer>
+            <CurrentTweet twitterData={twitterData} />
+          </GridTweetsContainer>
+        </GridTweets>
+      </Grid>
+      <AllTweets twitterData={twitterData} />
+    </>
+    )
 }
 
 export default MainLayout

@@ -2,7 +2,7 @@
 
 exports[`renders as expected 1`] = `
 <DocumentFragment>
-  .c11 {
+  .c12 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -14,16 +14,20 @@ exports[`renders as expected 1`] = `
 }
 
 .c8 {
-  border-radius: 9999px;
-  display: inline-block;
+  padding: 0 2rem;
 }
 
 .c9 {
   border-radius: 9999px;
-  display: block;
+  display: inline-block;
 }
 
 .c10 {
+  border-radius: 9999px;
+  display: block;
+}
+
+.c11 {
   white-space: nowrap;
 }
 
@@ -84,6 +88,12 @@ exports[`renders as expected 1`] = `
   align-items: center;
   height: 100%;
   margin: 0 auto;
+}
+
+@media (min-width:40rem) {
+  .c8 {
+    padding: 0;
+  }
 }
 
 @media (min-width:80rem) {
@@ -777,13 +787,15 @@ exports[`renders as expected 1`] = `
       <div
         class="c7"
       >
-        <div>
+        <div
+          class="c8"
+        >
           <div
-            class="c8"
+            class="c9"
           >
             <img
               alt=""
-              class="c9"
+              class="c10"
               data-testid="tweet-img"
               src="https://pbs.twimg.com/profile_images/823638186429558787/D8CBNuC3_normal.jpg"
             />
@@ -794,7 +806,7 @@ exports[`renders as expected 1`] = `
           >
             spiercy82 @Sean Piercy 
             <span
-              class="c10"
+              class="c11"
             >
               · 19 hours ago
             </span>
@@ -806,7 +818,7 @@ exports[`renders as expected 1`] = `
             RT @clark_robotics: Adobe has slashed the price of Photoshop in its early Black Friday sale: #ai #ml #dl #iot Cc: @MIKEQUINDAZZI https://t.…
           </p>
           <button
-            class="c11"
+            class="c12"
           >
             Another Tweet
             <svg
@@ -822,6 +834,449 @@ exports[`renders as expected 1`] = `
           </button>
         </div>
       </div>
+    </div>
+  </div>
+  .c0 {
+  margin-top: 5rem;
+  margin-bottom: -5rem;
+  padding: 5rem 2rem;
+}
+
+.c2 {
+  display: grid;
+  grid-gap: 2rem;
+}
+
+.c1 {
+  font-weight: normal;
+  margin: 0;
+  padding-bottom: 3rem;
+}
+
+@media (min-width:40rem) {
+  .c0 {
+    padding: 5rem;
+  }
+}
+
+@media (min-width:40rem) {
+  .c2 {
+    grid-gap: 5rem;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+  }
+}
+
+<div
+    class="c0"
+  >
+    <h2
+      class="c1"
+    >
+      All 100 Tweets
+    </h2>
+    <div
+      class="c2"
+    >
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
+      <div
+        class="lazyload-placeholder"
+        style="height: 100%;"
+      />
     </div>
   </div>
 </DocumentFragment>

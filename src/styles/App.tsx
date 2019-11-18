@@ -15,8 +15,13 @@ export const AppBody = styled.div`
 export const AppHeader = styled.div`
   background-color: rgba(0, 0, 0, 0.7);
   margin: 0;
+  padding: 0 2rem;
   padding-bottom: 4rem;
 
+  @media (min-width: 40rem) {
+    padding: 0;
+    padding-bottom: 4rem;
+  }
   @media (min-width: 80rem) {
     padding-bottom: 8rem;
   }
