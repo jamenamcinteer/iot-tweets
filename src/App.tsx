@@ -24,7 +24,6 @@ function App() {
           setTwitterData(json)
         }
       } catch (error) {
-        console.error(error)
         setApiError(true)
       }
     }

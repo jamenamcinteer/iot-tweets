@@ -1,9 +1,9 @@
-import React from 'react';
-import { cleanup, render, fireEvent } from "@testing-library/react";
-import "jest-styled-components";
-import NextTweetButton from './NextTweetButton';
+import React from 'react'
+import { cleanup, render, fireEvent } from "@testing-library/react"
+import "jest-styled-components"
+import NextTweetButton from './NextTweetButton'
 
-afterEach(cleanup);
+afterEach(cleanup)
 
 it('renders as expected', () => {
   const clickHandler = jest.fn()

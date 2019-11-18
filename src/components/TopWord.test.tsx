@@ -1,9 +1,9 @@
-import React from 'react';
-import { cleanup, render } from "@testing-library/react";
-import "jest-styled-components";
-import TopWord from './TopWord';
+import React from 'react'
+import { cleanup, render } from "@testing-library/react"
+import "jest-styled-components"
+import TopWord from './TopWord'
 
-afterEach(cleanup);
+afterEach(cleanup)
 
 it('renders as expected', () => {
   const topWord = {
